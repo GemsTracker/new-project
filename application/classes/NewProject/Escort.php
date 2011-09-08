@@ -1,0 +1,52 @@
+<?php
+
+
+/**
+ * Copyright (c) 2011, Erasmus MC
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *    * Redistributions of source code must retain the above copyright
+ *      notice, this list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright
+ *      notice, this list of conditions and the following disclaimer in the
+ *      documentation and/or other materials provided with the distribution.
+ *    * Neither the name of Erasmus MC nor the
+ *      names of its contributors may be used to endorse or promote products
+ *      derived from this software without specific prior written permission.
+ *      
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+include_once('GemsEscort.php');
+include_once('Gems/Project/Layout/SingleLayoutInterface.php');
+include_once('Gems/Project/Log/LogRespondentAccessInterface.php');
+include_once('Gems/Project/Organization/MultiOrganizationInterface.php');
+include_once('Gems/Project/Tracks/MultiTracksInterface.php');
+include_once('Gems/Project/Tracks/TracksOnlyInterface.php');
+
+class NewProject_Escort extends GemsEscort implements
+    Gems_Project_Layout_SingleLayoutInterface,
+    Gems_Project_Log_LogRespondentAccessInterface,
+    Gems_Project_Organization_MultiOrganizationInterface,
+    Gems_Project_Tracks_MultiTracksInterface,
+    Gems_Project_Tracks_TracksOnlyInterface
+{
+    public function getUserOrganization() { // Gems_Project_Organization_MultiOrganizationInterface
+        return $this->session->user_organization_id;
+    }
+    
+    public function getAllowedOrganizations($userId = null) { // Gems_Project_Organization_MultiOrganizationInterface
+        return parent::getAllowedOrganizations($userId);
+    }
+}

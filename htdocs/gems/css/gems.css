@@ -1,0 +1,626 @@
+/* Links test */
+a {
+    text-decoration: none;
+}
+
+.actionlink {
+    white-space: nowrap;
+}
+
+a.actionlink {
+    font-style: normal;
+    text-decoration: none;
+}
+
+a.actionlink + a.actionlink {margin-left: 1em;}
+a.actionlink + span.actionlink {margin-left: 1em;}
+span.actionlink + a.actionlink {margin-left: 1em;}
+span.actionlink + span.actionlink {margin-left: 1em;}
+
+span.actionlink {
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a[href^="mailto:"] {
+    background: transparent url(../images/mail.png) no-repeat scroll right center;
+    padding-right: 20px;
+}
+
+a:hover[href^="mailto:"] {
+    text-decoration: underline !important;
+}
+
+#all, #all_full_width {
+    margin: 0 auto;
+    max-width: 1012px;
+}
+
+.actionbox {
+    margin: .5em 0;
+    float: right;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+button.ui-datepicker-trigger {
+    margin: 0 0.25em 0 0.25em;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.currentRow {
+    background-color: aqua;
+    border: 3px solid darkblue !important;
+}
+
+.deleted {
+    color: #888888;
+    font-style: italic;
+    text-decoration: line-through; /* Bug in Firefox: line-through remains on for descending inline elements */
+}
+
+input[disabled], .disabled {
+    color: #737373;
+    font-style: italic;
+}
+
+input[disabled] {
+    color: #000000;
+    background: #EBEBE4;
+}
+
+div, img, li, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.buttons {
+    margin: 0.5em 0;
+}
+
+ /* #FFFF00 */
+.errors,
+.ui-tabs-nav-item.taberror span {
+    color: #DD0000;
+    font-weight: bold;
+}
+
+.errors {
+    background: #FFFACD;
+    border: 1px solid;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    display: inline-block;
+    margin: 2px;
+    padding: 5px 2px;
+}
+
+ul.errors {
+    padding-left: 1.5em;
+    padding-right: 0.5em;
+}
+
+#footer {
+    clear: both;
+    margin-top: 10px;
+    height: 1.2em;
+}
+
+h1, h2, h3 {
+    margin: 0.5em 0 0.25em 0;
+    padding: 0;
+}
+
+h4 {
+    margin: 0.125em 0;
+    padding: 0;
+}
+
+#header h1 {
+    margin-top: 0;
+}
+
+img {
+    border: 0 solid transparent;
+}
+
+.indent {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.indentLeft {
+    padding-left: 3em;
+}
+
+input.token_copy {
+    background-color: #EEEEEE;
+}
+
+label.required {
+    font-weight: bold;
+}
+
+.leftFloat {
+    float: left;
+    margin-right: 0.4em;
+}
+
+.logFile {
+    border: 2px solid #888888;
+    /* border-right: 0px transparent; */
+    padding: 1px 0 1px 3px;
+    height: 500px;
+    overflow: auto;
+    width: 99%;
+}
+
+.mailpreview {
+    background-color: #FEFEFE;
+    border: 3px groove #888888;
+    margin: 2px 1px;
+    padding: 2px 0.5em;
+}
+
+/* *padding + *ovverflow to use only in IE */
+#main {
+    background: transparent;
+    float: right;
+    margin-bottom: 10px;
+    width: 842px;
+    *overflow-x: auto;
+    *padding-bottom: 25px;
+}
+
+#main_full_width {
+    background: transparent;
+    margin-bottom: 10px;
+    padding: 10px 5px 0 5px;
+}
+
+#main form dd {
+    display: inline-block;
+    *display: inline;
+    margin: 0 10px;
+}
+
+#main form dt {
+    margin: 0;
+}
+
+#main form dt label {
+    clear: left;
+    float: left;
+    margin: 0 0.25em 0 0;
+}
+
+#main ul {
+    margin-bottom: 0.75em;
+    margin-top: 0.75em;
+}
+
+#main #tabContainer ul {
+    margin-bottom: 0em;
+    margin-top: 0em;
+}
+
+#main .tooldock .toolbox ul {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#menu {
+    background: transparent;
+    float: left;
+    max-width: 160px;
+    padding: 10px 0 10px 10px;
+    word-wrap: break-word; /* IE only feature */
+}
+
+#menu .navigation {
+    margin-left: 10px;
+}
+
+#menu .navigation .active {
+    font-weight: bold;
+}
+
+#menu ul {
+    margin-bottom: 0;
+}
+
+#menu ul li ul {
+    margin: 0 0 0.25em 1em;
+}
+
+#menu ul li a {
+    display: block;
+    *height: 1%; /* IE 6 Fix */
+    margin: 0;
+    padding: 0;
+    *width: 115px; /* IE 6 Fix */
+}
+
+#menu ul li a.breakBefore {
+    border-top: 1px dotted;
+    margin: 3px 4px 0 0;
+    padding: 2px 0 0 0;
+}
+
+#menu ul li a.noParameters {
+    font-style: italic;
+}
+
+#menu .navigation .active ul li {
+    font-weight: normal;
+}
+
+#menu .navigation .active ul li.active {
+    font-weight: bold;
+}
+
+#header_bar {
+    height: 1.9em;
+    padding: 0px;
+}
+
+#header_bar #contact {
+    position: relative;
+    padding: 5px 5px 0 5px;
+}
+
+#header_bar #contact .dropdownContent {
+    display: none;
+}
+
+#header_bar #contact:hover .dropdownContent {
+    display: block;
+    float: right;
+    left: -120%;
+    line-height: 110%;
+    list-style-type: none;
+    position: absolute;
+    text-align: right;
+    width: 200%;
+}
+
+#header_bar #contact .dropdownContent a {
+    display: inline-block;
+    width: 100%;
+}
+
+#header_bar #languages {
+    padding: 5px;
+    float:left;
+}
+
+#header_bar #organizations {
+    float:left;
+    height: 1.7em;
+    padding-top: 2px;
+    overflow: hidden;
+}
+
+#header_bar #organizations input, #header_bar #organizations select { margin: 1px; padding: 0px; font-size: 100%;}
+
+.middleAlign {
+    vertical-align: middle;
+}
+
+p.description {
+    display: inline;
+    font-size: 80%;
+    padding: 2px 6px;
+}
+
+p.info {
+    margin: 0.75em 0;
+}
+
+.periodSlider {
+    margin: 0.5em;
+}
+
+.rightAlign {
+    text-align: right;
+}
+
+.rightFloat {
+    float: right;
+    margin-left: 0.4em;
+}
+
+.search {
+    line-height: 250%;
+    margin: 0.5em 0;
+}
+
+.search input {
+    margin: 0 0.2em;
+}
+
+.search .inputgroup {
+    border: 2px solid;
+    border-bottom-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    clear: both;
+    float: left;
+    line-height: 125%;
+    margin: 0 auto 0.25em 0;
+    padding: 0.25em 0.5em 0.25em;
+}
+
+.search select {
+    width: 16em;
+}
+
+.search select.minimal {
+    width: auto;
+}
+
+select {
+    max-width: 48em;
+}
+
+select option[value=''], select[value=''] {
+    color: #737373;
+    font-style: italic;
+}
+
+.separator {
+    color: grey;
+    font-weight: normal;
+}
+
+.smallTime {
+    font-size: 80%;
+    font-style: italic;
+}
+
+.sortAsc, .sortAscSelected, .sortDescSelected {
+    line-height: 1.3em;
+    padding-bottom: 7px;
+}
+
+.sortAsc:hover, .sortAscSelected, .sortDescSelected:hover {
+    background: transparent url(../images/sort_asc.png) no-repeat scroll center bottom;
+}
+
+a.sortAscSelected:hover, a.sortDescSelected {
+    background: transparent url(../images/sort_desc.png) no-repeat scroll center bottom;
+}
+
+.sponsoring {
+    font-size: 80%;
+    margin: 5em auto 0 auto;
+    padding: 2px;
+    text-align: center;
+}
+
+table, td, th {
+    empty-cells: show;
+    margin: 0;
+    padding: 0;
+}
+
+table.browser, table.timeTable {
+    border-collapse: collapse;
+    border-spacing: 0;
+    clear: both;
+    margin: 0 0 0.5em 0;
+}
+
+table.browser {
+    width: 100%;
+}
+
+
+table.formTable td.label {
+    padding-top: 4px;
+    vertical-align: top;
+}
+
+table .question {
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+table .question_sub {
+    padding-left: 1em;
+}
+
+table td, table th {
+    padding: 2px 4px;
+    vertical-align: top;
+}
+
+table td.selectedColumn, table th.selectedColumn {
+    border-left: 2px solid;
+    border-right: 2px solid;
+}
+
+table tfoot td.selectedColumn, table tfoot th.selectedColumn {
+    border-bottom: 2px solid;
+}
+
+table td.date, table td.token {
+    white-space: pre;
+    /* width: 7em; */
+}
+
+table td.timeResult, table th.timeResult {
+    width: 5em;
+}
+
+table th {
+    text-align: left;
+}
+
+table tr.selectedRow td.selectedColumn {
+    border-bottom: 2px solid;
+    font-weight: bold;
+}
+
+table tr.selectedRow td.selectedColumn, table thead th.selectedColumn {
+    border-top: 2px solid;
+}
+
+table.timeTable th a {
+    color: inherit;
+}
+
+table.timeTable td a, table.timeTable td a:hover {
+    color: inherit;
+}
+
+.tab-displaygroup {
+    float: left;
+    margin-right: 5px;
+    /* optionally set a fixed with here for aligning */
+}
+
+.tab-displaygroup label {
+    display: inline-block; /* otherwise with won't be applied */
+    width: 5em;
+}
+
+.tab-displaygroup input,
+.tab-displaygroup select
+{
+    /* Set a default with so things will align */
+    max-width: 6em;
+}
+
+.tabrow {
+    margin: 0.5em 0 0 0;
+    *margin-top: 0;
+    padding: 0;
+    *padding-top: 0.5em;
+}
+
+.tabrow .tab {
+    border: 1px solid #000;
+    border-bottom-width: 0px;
+    float: left;
+    margin: 1px 0.5em 0 0;
+    padding: 0.2em;
+    text-align: center;
+    width: 8em;
+}
+
+.tabrow .tab.active {
+    border: 2px solid #000;
+    border-bottom-width: 0px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.tabrow .tab a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+textarea + p.description {
+    display: block;
+}
+
+.toolbox {
+    display: inline;
+    margin: 0.5em 0 0 0.5em;
+    position: relative;
+}
+
+.toolbox .toolanchor {
+    display: inline-block;
+}
+
+.toolbox a.toolanchor {
+    font-weight: bold;
+}
+
+.toolbox ul {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    z-index: 100;
+}
+
+.toolbox:hover ul {
+    display: inline;
+    max-height: 18.5em;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    top: 1.2em;
+}
+
+.toolbox ul li {
+    list-style-type: none;
+    margin: 1px 3px;
+}
+
+.toolbox ul li a.add {
+    display: inline-block;
+    margin: 1px 0;
+    overflow: hidden;
+    padding: 1px 2px;
+}
+
+.toolbox ul li a.right {
+    width: 16px;
+}
+
+
+.toolbox ul li a:hover {
+    text-decoration: none;
+}
+
+
+.tooldock {
+    padding: 5px;
+}
+
+.tooltip {
+    background: #FFFFCC;
+    border: 1px solid #e8f5fd;
+    padding: 3px 5px;
+    color: black;
+    font-size: .8em;
+}
+
+td.tracksList {
+    width: 25%;
+}
+
+td .tracksList {
+    height: 10em;
+    overflow: auto;
+}
+
+.tracksList p {
+    margin-bottom: 0.25em;
+}
+
+.zend_echo {
+    background-color: #FAF8CC;
+    border: #F62817 2px dotted;
+    color: #C11B17;
+    margin: 2em 0.25em;
+    padding: 0.25em 0.5em;
+    text-align: left;
+}

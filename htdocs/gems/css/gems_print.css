@@ -1,0 +1,33 @@
+/* Style for printing, disables certain UI elements */
+@media print {
+    body {
+        font-family: Arial,Verdana,Helvetica,Sans-serif;    
+    }
+    
+    #header_bar, #menu, .noprint, a.actionlink { display: none; }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, tr, th, td {
+        border: 1px solid #000;
+    }
+
+    table td.selectedColumn, table th.selectedColumn {
+        border-left: 2px solid;
+        border-right: 2px solid;
+    }
+
+    table thead th.selectedColumn {
+        border-top: 2px solid;
+    }
+
+    table tfoot td.selectedColumn {
+        border-bottom: 2px solid;
+    }
+
+    table.browser {
+        width: 100%;
+    }
+}

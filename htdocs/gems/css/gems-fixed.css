@@ -1,0 +1,30 @@
+/* Fluid width css */
+
+/* Load common css */
+@import url('gems-new.css');
+
+/* General styles */
+#all {
+    margin:0 auto;
+    padding:0;
+    border:0;			/* This removes the border around the viewport in old versions of IE */
+    width:1012px;
+    overflow: hidden;
+}
+
+/* fixed with for header/footer */
+#header,
+#header_bar,
+#footer {
+    clear: both;
+    width: 1012px;
+}
+
+#main {
+    width: 842px;
+    overflow-x: auto;
+}
+
+table.browser, table.timeTable {
+    width: 830px; /* otherwise no shadow on the right visible */
+}
