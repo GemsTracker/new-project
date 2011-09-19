@@ -249,14 +249,15 @@ label.required {
     display: block;
     *height: 1%; /* IE 6 Fix */
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 0.5em;
+    text-indent: -0.5em;
     *width: 115px; /* IE 6 Fix */
 }
 
 #menu ul li a.breakBefore {
     border-top: 1px dotted;
     margin: 3px 4px 0 0;
-    padding: 2px 0 0 0;
+    padding: 2px 0 0 0.5em;
 }
 
 #menu ul li a.noParameters {
