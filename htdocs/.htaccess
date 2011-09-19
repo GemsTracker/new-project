@@ -1,6 +1,7 @@
 Options +FollowSymlinks
 
 php_flag magic_quotes_gpc off
+php_value memory_limit 32M
 
 #SetEnv APPLICATION_ENV development
 
@@ -11,4 +12,3 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php [NC,L]
-#RewriteRule ^.*$ index.php [NC,L]
