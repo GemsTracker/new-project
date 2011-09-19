@@ -654,3 +654,7 @@ td .tracksList {
 .tracksList p {
     margin-bottom: 0.25em;
 }
+
+span.thetooltip {
+display: none;
+}
