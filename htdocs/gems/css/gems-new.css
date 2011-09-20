@@ -48,6 +48,10 @@
     height: 1.2em;
 }
 
+.fullwidth > div {
+    margin: 0px 5px; /* provide a little 'air' on full-width */
+}
+
 /*
  * END OF LAYOUT
  */
