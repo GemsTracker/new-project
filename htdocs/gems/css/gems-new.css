@@ -525,7 +525,7 @@ table tr.selectedRow td.selectedColumn, table thead th.selectedColumn {
     border-top: 2px solid;
 }
 
-table.timeTable th a {
+table.timeTable th a, table.timeTable td a {
     color: inherit;
 }
 
