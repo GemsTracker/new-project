@@ -4,7 +4,12 @@
         font-family: Arial,Verdana,Helvetica,Sans-serif;
     }
 
-    #header_bar, #menu, .noprint, a.actionlink { display: none; }
+    #header_bar, #menu, .noprint, a.actionlink,
+    span.tooltip, span.thetooltip,
+    .button, button,
+    .ui-tabs-nav-item { display: none; }
+
+    p.description { display: inline; }
 
     table {
         border-collapse: collapse;
