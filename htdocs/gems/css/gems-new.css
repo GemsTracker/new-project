@@ -462,7 +462,7 @@ table, td, th {
     padding: 0;
 }
 
-table.browser, table.timeTable {
+table.displayer, table.browser, table.timeTable {
     border-collapse: collapse;
     border-spacing: 0;
     clear: both;
@@ -526,10 +526,6 @@ table tr.selectedRow td.selectedColumn, table thead th.selectedColumn {
 }
 
 table.timeTable th a {
-    color: inherit;
-}
-
-table.timeTable td a, table.timeTable td a:hover {
     color: inherit;
 }
 
