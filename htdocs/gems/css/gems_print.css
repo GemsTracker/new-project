@@ -1,9 +1,9 @@
 /* Style for printing, disables certain UI elements */
 @media print {
     body {
-        font-family: Arial,Verdana,Helvetica,Sans-serif;    
+        font-family: Arial,Verdana,Helvetica,Sans-serif;
     }
-    
+
     #header_bar, #menu, .noprint, a.actionlink { display: none; }
 
     table {
@@ -30,4 +30,6 @@
     table.browser {
         width: 100%;
     }
+
+    .print-only { display: inline; }
 }

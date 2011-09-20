@@ -335,6 +335,8 @@ p.info {
     margin: 0.5em;
 }
 
+.print-only { display: none; }
+
 .rightAlign {
     text-align: right;
 }
