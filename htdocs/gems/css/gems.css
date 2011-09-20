@@ -90,6 +90,7 @@ div.buttons {
 }
 
  /* #FFFF00 */
+.tblSpecial,
 .errors,
 .ui-tabs-nav-item.taberror span {
     color: #DD0000;

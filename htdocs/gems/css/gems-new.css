@@ -143,6 +143,7 @@ div.buttons {
     border: 1px solid;
 }
 
+.tblSpecial,
 .zend_echo,
 .errors,
 .ui-tabs-nav-item.taberror span {
