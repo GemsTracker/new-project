@@ -4,7 +4,7 @@
 /**
  * Copyright (c) 2011, Erasmus MC
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *    * Redistributions of source code must retain the above copyright
@@ -15,7 +15,7 @@
  *    * Neither the name of Erasmus MC nor the
  *      names of its contributors may be used to endorse or promote products
  *      derived from this software without specific prior written permission.
- *      
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -33,19 +33,19 @@ include_once('Gems/Project/Layout/SingleLayoutInterface.php');
 include_once('Gems/Project/Log/LogRespondentAccessInterface.php');
 include_once('Gems/Project/Organization/MultiOrganizationInterface.php');
 include_once('Gems/Project/Tracks/MultiTracksInterface.php');
-include_once('Gems/Project/Tracks/TracksOnlyInterface.php');
+include_once('Gems/Project/Tracks/StandAloneSurveysInterface.php');
 
 class NewProject_Escort extends GemsEscort implements
     Gems_Project_Layout_SingleLayoutInterface,
     Gems_Project_Log_LogRespondentAccessInterface,
     Gems_Project_Organization_MultiOrganizationInterface,
     Gems_Project_Tracks_MultiTracksInterface,
-    Gems_Project_Tracks_TracksOnlyInterface
+    Gems_Project_Tracks_StandAloneSurveysInterface
 {
     public function getUserOrganization() { // Gems_Project_Organization_MultiOrganizationInterface
         return $this->session->user_organization_id;
     }
-    
+
     public function getAllowedOrganizations($userId = null) { // Gems_Project_Organization_MultiOrganizationInterface
         return parent::getAllowedOrganizations($userId);
     }
