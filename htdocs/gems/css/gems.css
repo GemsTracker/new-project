@@ -80,6 +80,10 @@ input[disabled] {
     background: #EBEBE4;
 }
 
+input[readonly] {
+    background: #EBEBE4;
+}
+
 div, img, li, p, ul {
     margin: 0;
     padding: 0;
