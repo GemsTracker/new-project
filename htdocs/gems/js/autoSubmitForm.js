@@ -13,29 +13,29 @@ jQuery.widget("ui.autoSubmitForm", {
         var self = this;
 
         /*
-        console.log(this.element);            // Firebug console 
-        console.log(this.options.submitUrl);  // Firebug console 
+        console.log(this.element);            // Firebug console
+        console.log(this.options.submitUrl);  // Firebug console
         console.log(this.options.targetId);   // Firebug console */
 
         // Bind the events
-        jQuery('input:text, select, textarea', this.element).keyup(function(e) {self.filter();}); 
-        jQuery('select', this.element).change(function(e) {self.filter();}); 
-        jQuery('input:checkbox, input:radio', this.element).click(function(e) {self.filter();}); 
+        jQuery('input:text, select, textarea', this.element).keyup(function(e) {self.filter();});
+        jQuery('select', this.element).change(function(e) {self.filter();});
+        jQuery('input:checkbox, input:radio', this.element).click(function(e) {self.filter();});
 
         // Set the initial value
-        this.lastQuery = this.value(); 
+        this.lastQuery = this.value();
     },
 
     complete: function (request, status) {
         this.request = null;
-        
+
         // Check for changes
-        // - if the input field was changed since the last request 
+        // - if the input field was changed since the last request
         //   filter() will search on the new value
         // - if the input field has not changed, then no new request
         //   is made.
-        this.filter();  
-    }, 
+        this.filter();
+    },
 
     destroy: function() {
          if (this.request != null) {
@@ -46,18 +46,21 @@ jQuery.widget("ui.autoSubmitForm", {
 
     filter: function () {
 
+        //If we have a pending request and want to create a new one, cancel the first
+        this.destroy();
+
         if (this.request == null) {
             // var name = this.options.elementName ? this.options.elementName : this.element.attr('name');
-            
+
             var postData = this.value();
-    
+
             if (this.options.targetId && this.options.submitUrl) {
                 // Prevent double dipping when e.g. the arrow keys were used.
                 if (jQuery.param(postData) != jQuery.param(this.lastQuery))
                 {
                     this.lastQuery = postData;
                     //console.log(postData);
-        
+
                     //*
                     var self = this;
                     this.request = jQuery.ajax({
@@ -70,20 +73,20 @@ jQuery.widget("ui.autoSubmitForm", {
                         });
                     // */
                 }
-            } 
+            }
         }
     },
 
     success: function (data, status, request) {
         jQuery(this.options.targetId).html(data);
-    }, 
+    },
 
     value: function () {
         return $(this.element[0]).serializeArray();
-    }, 
+    },
 
     lastQuery: null,
 
     request: null
 
-}); 
+});
