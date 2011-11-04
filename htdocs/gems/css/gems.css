@@ -182,6 +182,7 @@ label.required {
 /* *padding + *ovverflow to use only in IE */
 #main {
     background: transparent;
+    clear: both;
     float: right;
     margin-bottom: 10px;
     width: 842px;
