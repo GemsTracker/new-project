@@ -95,6 +95,16 @@ a:hover[href^="mailto:"] {
     text-decoration: underline !important;
 }
 
+a.globe {
+    background: transparent url(../images/globe.png) no-repeat scroll right center;
+    padding-right: 20px;
+}
+
+a.pdf {
+    background: transparent url(../images/pdf_small.gif) no-repeat scroll right center;
+    padding-right: 20px !important;
+}
+
 body {
     margin: 0;
     padding: 0;
