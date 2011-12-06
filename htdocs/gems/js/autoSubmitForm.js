@@ -50,6 +50,7 @@ jQuery.widget("ui.autoSubmitForm", {
         this.destroy();
 
         if (this.request == null) {
+
             // var name = this.options.elementName ? this.options.elementName : this.element.attr('name');
 
             var postData = this.value();
@@ -68,12 +69,19 @@ jQuery.widget("ui.autoSubmitForm", {
                         type: "POST",
                         dataType: "html",
                         data: postData,
+                        error: function(request, status, error) {self.error(request, status);},
                         complete: function(request, status) {self.complete(request, status);},
                         success: function(data, status, request) {self.success(data, status, request);}
                         });
                     // */
                 }
             }
+        }
+    },
+    
+    error: function (request, status) {
+        if (request.status === 401) {
+            location.href = location.href;
         }
     },
 
