@@ -352,6 +352,15 @@ p.info {
 
 .print-only { display: none; }
 
+.progress {
+    background: url('progress_animation.gif') repeat-x center left transparent;
+    border: black solid 1px;
+    margin: 4px 0;
+    padding: 2px;
+    text-align: center;
+    width: 100%;
+}
+
 .rightAlign {
     text-align: right;
 }
