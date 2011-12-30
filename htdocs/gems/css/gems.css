@@ -352,15 +352,6 @@ p.info {
 
 .print-only { display: none; }
 
-.progress {
-    background: url('progress_animation.gif') repeat-x center left transparent;
-    border: black solid 1px;
-    margin: 4px 0;
-    padding: 2px;
-    text-align: center;
-    width: 100%;
-}
-
 .rightAlign {
     text-align: right;
 }
@@ -642,6 +633,17 @@ td .tracksList {
 
 .tracksList p {
     margin-bottom: 0.25em;
+}
+
+.ui-progressbar {
+    margin: 4px;
+    width: 98%;
+}
+
+.ui-progressbar-text {
+    margin: 1px;
+    padding: 4px;
+    text-align: center;
 }
 
 .zend_echo {
