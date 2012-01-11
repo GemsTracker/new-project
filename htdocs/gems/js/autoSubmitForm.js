@@ -44,6 +44,12 @@ jQuery.widget("ui.autoSubmitForm", {
          }
     },
 
+    error: function (request, status) {
+        if (request.status === 401) {
+            location.href = location.href;
+        }
+    },
+
     filter: function () {
 
         //If we have a pending request and want to create a new one, cancel the first
@@ -76,12 +82,6 @@ jQuery.widget("ui.autoSubmitForm", {
                     // */
                 }
             }
-        }
-    },
-    
-    error: function (request, status) {
-        if (request.status === 401) {
-            location.href = location.href;
         }
     },
 
