@@ -490,6 +490,10 @@ table.formTable td.label {
     vertical-align: top;
 }
 
+table.formTable td[colspan="2"].label {
+    text-align: left;
+}
+
 table tr[onclick]:hover,
 table td[onclick]:hover,
 table th[onclick]:hover {
