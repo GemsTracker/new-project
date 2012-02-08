@@ -147,6 +147,11 @@ h4 {
     margin-top: 0;
 }
 
+.icon {
+    float: right;
+    padding-right: 4px;
+}
+
 img {
     border: 0 solid transparent;
 }
