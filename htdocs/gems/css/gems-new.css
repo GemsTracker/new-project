@@ -131,6 +131,11 @@ button.ui-datepicker-trigger {
     text-decoration: line-through; /* Bug in Firefox: line-through remains on for descending inline elements */
 }
 
+.icon {
+    float: right;
+    padding-right: 4px;
+}
+
 input[disabled], .disabled {
     color: #737373;
     font-style: italic;
