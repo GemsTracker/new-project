@@ -224,6 +224,11 @@ h4 {
     width: 100%;
 }
 
+#login .logout {
+    margin-left: 1em;
+    margin-right: .5em;
+}
+
 img {
     border: 0 solid transparent;
 }
