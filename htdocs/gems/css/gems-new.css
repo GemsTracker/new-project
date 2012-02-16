@@ -367,7 +367,7 @@ label.required {
     padding: 0px;
 }
 
-#header_bar #contact {
+#header_bar #contact, #header_bar #login {
     position: relative;
     padding: 5px 5px 0 5px;
 }
