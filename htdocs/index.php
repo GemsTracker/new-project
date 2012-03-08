@@ -63,7 +63,7 @@ if (! defined('APPLICATION_ENV')) {
         $env = getenv('APPLICATION_ENV');
     } else {
         // Erasmus MC processing
-        if (strpos($_SERVER["HTTP_HOST"], 'survey') === false) {
+        if (isset($_SERVER["HTTP_HOST"]) && (strpos($_SERVER["HTTP_HOST"], 'survey') === false)) {
             $env = 'testing';
         } else {
             $env = 'production';
