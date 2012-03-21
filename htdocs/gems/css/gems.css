@@ -211,17 +211,17 @@ label.required {
     padding: 10px 5px 0 5px;
 }
 
-#main form dd, #iframe form dd {
+#main form dd {
     display: inline-block;
     *display: inline;
     margin: 0 10px;
 }
 
-#main form dt, #iframe form dt {
+#main form dt {
     margin: 0;
 }
 
-#main form dt label, #iframe form dt label {
+#main form dt label {
     clear: left;
     float: left;
     margin: 0 0.25em 0 0;
