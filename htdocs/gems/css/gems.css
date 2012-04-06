@@ -122,6 +122,10 @@ div.buttons {
     padding: 5px 2px;
 }
 
+dd .errors {
+    display: block;
+}
+
 ul.errors {
     padding-left: 1.5em;
     padding-right: 0.5em;

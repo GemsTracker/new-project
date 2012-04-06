@@ -174,15 +174,15 @@ div.buttons {
     font-weight: bold;
 }
 
-.zend_echo {
-    font-weight: normal;
-}
-
 .errors {
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     display: inline-block;
+}
+
+dd .errors {
+    display: block;
 }
 
 ul.errors {
@@ -687,5 +687,10 @@ td .tracksList {
 }
 
 span.thetooltip {
-display: none;
+    display: none;
 }
+
+.zend_echo {
+    font-weight: normal;
+}
+
