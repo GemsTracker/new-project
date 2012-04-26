@@ -44,14 +44,26 @@ a.pdf {
     padding-right: 20px !important;
 }
 
+.actionbox {
+    margin: .5em 0;
+    float: right;
+}
+
 #all, #all_full_width {
     margin: 0 auto;
     max-width: 1012px;
 }
 
-.actionbox {
-    margin: .5em 0;
-    float: right;
+.askRound {
+    margin-left: 2em;
+}
+
+.askSurvey {
+    margin: 0.1em 0 0.1em 4em;
+}
+
+.askTrack {
+    margin-top: 0.8em;
 }
 
 body {

@@ -105,6 +105,18 @@ a.pdf {
     padding-right: 20px !important;
 }
 
+.askRound {
+    margin-left: 2em;
+}
+
+.askSurvey {
+    margin: 0.1em 0 0.1em 4em;
+}
+
+.askTrack {
+    margin-top: 0.8em;
+}
+
 body {
     margin: 0;
     padding: 0;
