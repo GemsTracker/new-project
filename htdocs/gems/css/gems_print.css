@@ -1,5 +1,8 @@
 /* Style for printing, disables certain UI elements */
 @media print {
+    /* Setting font-size */
+    body, table { font-size: 9pt; }
+    
     body {
         font-family: Arial,Verdana,Helvetica,Sans-serif;
     }
