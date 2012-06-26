@@ -39,5 +39,10 @@
         width: 100%;
     }
 
+    .tab-displaygroup {
+        float: left;
+        margin-right: 3em;
+    }
+
     .print-only { display: inline; }
 }
