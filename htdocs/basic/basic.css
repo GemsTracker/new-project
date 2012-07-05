@@ -4,7 +4,6 @@ a {
 }
 
 #all, #all_full_width {
-    margin: 0 10px;
     max-width: 10000px;
 }
 
@@ -18,7 +17,7 @@ a.actionlink, a.actionlink:link, a.actionlink:visited, a.browselink, a.browselin
     box-shadow: 1px 1px 2px darkgrey;
     -moz-box-shadow: 1px 1px 2px darkgrey;
     -webkit-box-shadow: 1px 1px 2px darkgrey;
-    color: black;    
+    color: black;
     margin: 4px 0;
     padding: 0 4px;
     text-decoration: none;
@@ -44,7 +43,7 @@ span.actionlink, span.browselink {
     box-shadow: 1px 1px 2px darkgrey;
     -moz-box-shadow: 1px 1px 2px darkgrey;
     -webkit-box-shadow: 1px 1px 2px darkgrey;
-    color: black;   
+    color: black;
     font-size: 80%;
     margin: 4px 0;
     padding: 0 4px;
@@ -59,14 +58,7 @@ body {
     background-color: white;
     font-family: Verdana,Arial,Helvetica,Sans-serif;
     font-size: 14px;
-}
-
-#header {
-    background: url(local/pulse.gif) no-repeat right bottom;
-    height: 52px;
-    margin: 10px auto 0 auto;
-    overflow: hidden;
-    padding : 0;
+    padding: 0 10px 0 10px;
 }
 
 #footer, #header_bar {
@@ -78,8 +70,14 @@ body {
     box-shadow: 1px 1px 2px black;
     -moz-box-shadow: 1px 1px 2px black;
     -webkit-box-shadow: 1px 1px 2px black;
-    padding: 1px 3px;
-    /*height: 18px;*/
+}
+
+#header {
+    background: url(local/pulse.gif) no-repeat right bottom;
+    height: 52px;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+    padding: 0;
 }
 
 #header_bar #languages span {
@@ -100,15 +98,15 @@ body {
 }
 
 #menu .navigation .active a {
-    color: black;        
-} 
+    color: black;
+}
 
 #menu .navigation .active ul li a {
-    color: darkblue;        
-} 
+    color: darkblue;
+}
 
 #menu .navigation .active ul li.active a {
-    color: black;        
+    color: black;
 }
 
 .tab {
@@ -151,7 +149,7 @@ table.browser tfoot td, table.timeTable tfoot td {
     font-weight: bold;
 }
 
-table.browser tfoot td a, table.browser thead th a, , table.timeTable tfoot td a, table.timeTable thead th a, 
+table.browser tfoot td a, table.browser thead th a, , table.timeTable tfoot td a, table.timeTable thead th a,
 .toolbox .toolanchor {
     color: #00ffff;
     text-decoration: underline;
