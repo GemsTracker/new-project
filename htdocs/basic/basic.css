@@ -1,0 +1,238 @@
+
+a {
+    color: darkblue;
+}
+
+#all, #all_full_width {
+    margin: 0 10px;
+    max-width: 10000px;
+}
+
+/* Set these before actionlink */
+a.actionlink, a.actionlink:link, a.actionlink:visited, a.browselink, a.browselink:link, a.browselink:visited, button.small, button.ui-datepicker-trigger, input.button.small, button, input.button {
+    background: lightgrey;
+    border: 1px solid black;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px darkgrey;
+    -moz-box-shadow: 1px 1px 2px darkgrey;
+    -webkit-box-shadow: 1px 1px 2px darkgrey;
+    color: black;    
+    margin: 4px 0;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+a.actionlink:hover, a.browselink:hover, button:hover.small, button.ui-datepicker-trigger:hover, input.button.small:hover, button:hover, input.button:hover {
+    background: black;
+    box-shadow: 2px 2px 5px darkgray;
+    -moz-box-shadow: 2px 2px 5px darkgray;
+    -webkit-box-shadow: 2px 2px 5px darkgray;
+    color: white;
+}
+
+a.actionlink, a.actionlink:link, a.actionlink:visited, a.browselink, a.browselink:link, a.browselink:visited, button.small, button.ui-datepicker-trigger, input.button.small {
+    font-size: 80%;
+}
+
+span.actionlink, span.browselink {
+    border: 1px dotted darkgrey;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px darkgrey;
+    -moz-box-shadow: 1px 1px 2px darkgrey;
+    -webkit-box-shadow: 1px 1px 2px darkgrey;
+    color: black;   
+    font-size: 80%;
+    margin: 4px 0;
+    padding: 0 4px;
+}
+
+#autofilter_target table tbody td strong.marked {
+    border-left: 1px dotted;
+    border-right: 1px dotted;
+}
+
+body {
+    background-color: white;
+    font-family: Verdana,Arial,Helvetica,Sans-serif;
+    font-size: 14px;
+}
+
+#header {
+    background: url(local/pulse.gif) no-repeat right bottom;
+    height: 52px;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+    padding : 0;
+}
+
+#footer, #header_bar {
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 1px 1px 2px black;
+    -moz-box-shadow: 1px 1px 2px black;
+    -webkit-box-shadow: 1px 1px 2px black;
+    padding: 1px 3px;
+    /*height: 18px;*/
+}
+
+#header_bar #languages span {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#main {
+    width: 83%;
+}
+
+#main #crumbs {
+    margin: 6px 0;
+}
+
+#menu {
+    width: 16%;
+}
+
+#menu .navigation .active a {
+    color: black;        
+} 
+
+#menu .navigation .active ul li a {
+    color: darkblue;        
+} 
+
+#menu .navigation .active ul li.active a {
+    color: black;        
+}
+
+.tab {
+    background: lightgrey;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    box-shadow: 2px 0px 2px darkgrey;
+    -moz-box-shadow: 2px 0px 2px darkgrey;
+    -webkit-box-shadow: 2px 0px 2px darkgrey;
+}
+
+.tab a {
+        color: black;
+}
+
+.tab .active {
+    box-shadow: 4px 0px 4px darkgrey;
+    -moz-box-shadow: 4px 0px 4px darkgrey;
+    -webkit-box-shadow: 4px 0px 4px darkgrey;
+}
+
+table.browser[onclick]:hover, table.browser tbody tr[onclick]:hover, table.displayer tbody[onclick]:hover, table.displayer tbody[onclick]:hover td {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+table.browser tbody tr.even, table.formTable tbody tr.even, .tooldock, table.timeTable tbody tr.even {
+    background-color: #EEEEEE;
+}
+
+table.browser td, table.browser th, table.timeTable td, table.timeTable th {
+    border: 1px solid black;
+}
+
+table.browser tfoot td, table.timeTable tfoot td {
+    font-weight: bold;
+}
+
+table.browser tfoot td a, table.browser thead th a, , table.timeTable tfoot td a, table.timeTable thead th a, 
+.toolbox .toolanchor {
+    color: #00ffff;
+    text-decoration: underline;
+}
+
+table.browser tfoot td .disabled, table.timeTable tfoot td .disabled {
+    color: #eeeeee;
+}
+
+table.browser thead th, table.browser tfoot td, table.displayer th, table.timeTable thead th, table.timeTable tfoot td {
+    background-color: gray;
+    color: white;
+}
+
+table.displayer caption {
+    border-left: 1px dotted gray;
+    border-right: 1px dotted gray;
+    border-top: 1px dotted gray;
+}
+
+table.displayer tbody td {
+    border: 1px dotted gray;
+}
+
+table tbody td.selectedColumn, table tfoot td.selectedColumn, table thead th.selectedColumn {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.timeTable thead th.selectedColumn, table.timeTable td[onclick]:hover, table.timeTable th[onclick]:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+.toolbox .toolanchor {
+    background: darkgray url(local/dropdown.png) no-repeat right center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    padding: 2px 1em 2px 4px;
+    width: 16em;
+}
+
+.toolbox:hover ul {
+    background: lightgrey;
+    width: 16.5em;
+}
+
+.toolbox ul li {
+    width: 15em;
+}
+
+.toolbox ul li a.add {
+    height: 1.1em;
+    overflow: hidden;
+    width: 13em;
+}
+
+.toolbox ul li a.right {
+    width: 16px;
+}
+
+.toolbox ul li a:hover {
+    background: gray;
+    color: white;
+    text-decoration: none;
+}
+
+.tooldock {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    box-shadow: 2px 2px 4px darkgray;
+    -moz-box-shadow: 2px 2px 4px darkgray;
+    -webkit-box-shadow: 2px 2px 4px darkgray;
+}
+
