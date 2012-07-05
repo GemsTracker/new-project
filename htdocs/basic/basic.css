@@ -85,16 +85,8 @@ body {
     font-weight: bold;
 }
 
-#main {
-    width: 83%;
-}
-
 #main #crumbs {
-    margin: 6px 0;
-}
-
-#menu {
-    width: 16%;
+    margin: 0.5em 0;
 }
 
 #menu .navigation .active a {
