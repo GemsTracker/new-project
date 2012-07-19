@@ -9,7 +9,8 @@ jQuery.widget("ui.autoSubmitForm", {
         // submitUrl: the request url
     },
 
-    _init: function() {
+    _init: function () {
+        "use strict";
         var self = this;
 
         /*
@@ -18,15 +19,16 @@ jQuery.widget("ui.autoSubmitForm", {
         console.log(this.options.targetId);   // Firebug console */
 
         // Bind the events
-        jQuery('input:text, select, textarea', this.element).keyup(function(e) {self.filter();});
-        jQuery('select', this.element).change(function(e) {self.filter();});
-        jQuery('input:checkbox, input:radio', this.element).click(function(e) {self.filter();});
+        jQuery('input:text, select, textarea', this.element).keyup(function (e) {self.filter(); });
+        jQuery('select', this.element).change(function (e) {self.filter(); });
+        jQuery('input:checkbox, input:radio', this.element).click(function (e) {self.filter(); });
 
         // Set the initial value
         this.lastQuery = this.value();
     },
 
     complete: function (request, status) {
+        "use strict";
         this.request = null;
 
         // Check for changes
@@ -37,48 +39,52 @@ jQuery.widget("ui.autoSubmitForm", {
         this.filter();
     },
 
-    destroy: function() {
-         if (this.request != null) {
-             this.request.abort();
-             this.request = null;
-         }
-    },
-
-    error: function (request, status) {
-        if (request.status === 401) {
-            location.href = location.href;
+    destroy: function () {
+        "use strict";
+        if (this.request !== null) {
+            this.request.abort();
+            this.request = null;
         }
     },
 
+    error: function (request, status) {
+        "use strict";
+        /*
+        if (request.status === 401) {
+            location.href = location.href;
+        } // */
+    },
+
     filter: function () {
+        "use strict";
+        var postData, self;
 
         //If we have a pending request and want to create a new one, cancel the first
         this.destroy();
 
-        if (this.request == null) {
+        if (this.request === null) {
 
             // var name = this.options.elementName ? this.options.elementName : this.element.attr('name');
 
-            var postData = this.value();
+            postData = this.value();
 
             if (this.options.targetId && this.options.submitUrl) {
                 // Prevent double dipping when e.g. the arrow keys were used.
-                if (jQuery.param(postData) != jQuery.param(this.lastQuery))
-                {
+                if (jQuery.param(postData) !== jQuery.param(this.lastQuery)) {
                     this.lastQuery = postData;
                     //console.log(postData);
 
                     //*
-                    var self = this;
+                    self = this;
                     this.request = jQuery.ajax({
                         url: this.options.submitUrl,
                         type: "POST",
                         dataType: "html",
                         data: postData,
-                        error: function(request, status, error) {self.error(request, status);},
-                        complete: function(request, status) {self.complete(request, status);},
-                        success: function(data, status, request) {self.success(data, status, request);}
-                        });
+                        error: function (request, status, error) {self.error(request, status); },
+                        complete: function (request, status) {self.complete(request, status); },
+                        success: function (data, status, request) {self.success(data, status, request); }
+                    });
                     // */
                 }
             }
@@ -86,11 +92,13 @@ jQuery.widget("ui.autoSubmitForm", {
     },
 
     success: function (data, status, request) {
+        "use strict";
         jQuery(this.options.targetId).html(data);
     },
 
     value: function () {
-        return $(this.element[0]).serializeArray();
+        "use strict";
+        return jQuery(this.element[0]).serializeArray();
     },
 
     lastQuery: null,
