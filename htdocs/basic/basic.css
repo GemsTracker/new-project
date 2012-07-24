@@ -73,7 +73,7 @@ body {
 }
 
 #header {
-    background: url(local/pulse.gif) no-repeat right bottom;
+    background: url(local/pulse.gif) repeat-x 400px bottom; /* change 400px to move left or right */
     height: 52px;
     margin: 10px auto 0 auto;
     overflow: hidden;
