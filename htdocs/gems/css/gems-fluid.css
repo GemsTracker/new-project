@@ -469,6 +469,10 @@ span.thetooltip {
     text-align: center;
 }
 
+.surveyTitle {
+    font-weight: bold;
+}
+
 table, td, th {
     empty-cells: show;
     margin: 0;

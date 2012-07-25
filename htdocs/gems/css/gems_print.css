@@ -31,7 +31,7 @@
         border-collapse: collapse;
     }
 
-    table, tr, th, td {
+    tr, th, td {
         border: 1px solid #000;
         text-align: left;
     }
@@ -59,4 +59,9 @@
     }
 
     .print-only { display: inline; }
+
+    .surveyTitle {
+        font-weight: bold;
+        page-break-before: always; /* left would be even nicer, but mostly unsupported in browsers */
+    }
 }
