@@ -60,8 +60,15 @@
 
     .print-only { display: inline; }
 
+    .roundDescription {
+        float: left;
+        font-style: italic;
+    }
+
     .surveyTitle {
         font-weight: bold;
         page-break-before: always; /* left would be even nicer, but mostly unsupported in browsers */
+        float: left;
+        margin-right: 2em;
     }
 }

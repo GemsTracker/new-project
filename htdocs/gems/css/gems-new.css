@@ -426,6 +426,11 @@ p.info {
     margin-left: 0.4em;
 }
 
+.roundDescription {
+    float: left;
+    font-style: italic;
+}
+
 .search {
     line-height: 250%;
     margin: 0.5em 0;
@@ -496,6 +501,8 @@ a.sortAscSelected:hover, a.sortDescSelected {
 
 .surveyTitle {
     font-weight: bold;
+    float: left;
+    margin-right: 2em;
 }
 
 table, td, th {
