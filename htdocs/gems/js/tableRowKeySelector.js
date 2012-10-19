@@ -44,7 +44,7 @@ jQuery.widget("ui.tableRowKeySelector", {
 
     listener: function (e) {
         "use strict";
-        var currentItem, key, link, nextItem;
+        var currentItem, key, link, nextItem = null;
 
         if (e === null) {
             key = event.keyCode;
