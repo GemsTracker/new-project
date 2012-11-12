@@ -7,6 +7,10 @@ php_value memory_limit 32M
 
 RewriteEngine On
 
+#Rewrite to https can be enabled using the next 2 lines
+#RewriteCond %{HTTPS} =off
+#RewriteRule (.*)$ https://%{SERVER_NAME}/[new_project]/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
