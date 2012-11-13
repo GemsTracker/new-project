@@ -664,6 +664,10 @@ td .tracksList {
     margin-bottom: 0.25em;
 }
 
+#ui-datepicker-div {
+    display: none;
+}
+
 .ui-progressbar {
     margin: 4px;
     width: 98%;
