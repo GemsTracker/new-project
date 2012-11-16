@@ -51,7 +51,7 @@ define('GEMS_WEB_DIR', dirname(__FILE__));
 define('GEMS_ROOT_DIR', realpath(GEMS_WEB_DIR . '/../'));
 define('GEMS_LIBRARY_DIR', realpath(GEMS_ROOT_DIR . '/library/Gems'));
 
-// Pretty project name
+// Internal pretty project name - no spaces etc., will be used for tags and IDs!
 define('GEMS_PROJECT_NAME', 'newProject');
 defined('GEMS_PROJECT_NAME_UC') || define('GEMS_PROJECT_NAME_UC', ucfirst(GEMS_PROJECT_NAME));
 
