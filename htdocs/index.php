@@ -73,6 +73,9 @@ if (! defined('APPLICATION_ENV')) {
     define('APPLICATION_ENV', $env);
 }
 
+// May be needed for strict, depending on server settings
+date_default_timezone_set('Europe/Amsterdam');
+
 /**
  * Load database login variables, Erasmus MC way.
  */
