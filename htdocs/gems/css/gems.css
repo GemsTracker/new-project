@@ -81,6 +81,55 @@ button.ui-datepicker-trigger {
     text-align: center;
 }
 
+.compliance .rounds {
+    overflow: hidden;
+    white-space: pre;
+}
+
+.compliance .rounds th {
+    border-top: transparent none;
+}
+
+.compliance td.answered {
+    background-color: green;
+    color: green;
+}
+
+.compliance td.missed {
+    background-color: red;
+    color: red;
+}
+
+.compliance td.newRound, .compliance th.newRound {
+    border-left-width: 3px;
+}
+
+.compliance td.open {
+    background-color: yellow;
+    color: yellow;
+}
+
+.compliance td.round, .compliance th.round {
+    min-width: 14px;
+    max-width: 14px;
+    overflow: hidden;
+}
+
+.compliance td.unknown {
+    background-color: white;
+    color: white;
+}
+
+.compliance td.waiting {
+    background-color: lightblue;
+    color: lightblue;
+}
+
+.compliance td.empty {
+    background-color: white;
+    color: white;
+}
+
 .currentRow {
     background-color: aqua;
     border: 3px solid darkblue !important;
