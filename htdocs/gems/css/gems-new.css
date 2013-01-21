@@ -157,7 +157,7 @@ button.ui-datepicker-trigger {
     background: transparent url(../icons/nav_up_blue.png) no-repeat center center;
 }
 
-.compliance td.round {
+.compliance td.round, .compliance td.round a {
     color: transparent;
 }
 
@@ -170,7 +170,7 @@ button.ui-datepicker-trigger {
 }
 
 .compliance td.unknown {
-    background-color: transparent;
+    background: transparent url(../icons/nav_flat_blue.png) no-repeat center center;
 }
 
 .compliance td.waiting {
