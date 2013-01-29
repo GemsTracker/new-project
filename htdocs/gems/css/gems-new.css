@@ -766,3 +766,7 @@ span.thetooltip {
     font-weight: normal;
 }
 
+/* fixes for tabrow with browsetable */
+#autofilter_target { clear: both;}
+.tabrow { clear: both; }
+.tabrow .tab { width: auto;}
