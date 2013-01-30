@@ -717,3 +717,6 @@ span.thetooltip {
     font-weight: normal;
 }
 
+#autofilter_target { clear: both;}
+.tabrow { clear: both; }
+.tabrow .tab { width: auto;}
