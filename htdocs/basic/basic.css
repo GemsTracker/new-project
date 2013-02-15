@@ -101,6 +101,9 @@ body {
     color: black;
 }
 
+p.info {
+    max-width: 60em;
+}
 .tab {
     background: lightgrey;
     border-top-left-radius: 4px;
