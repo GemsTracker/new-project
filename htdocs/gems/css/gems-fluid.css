@@ -691,5 +691,5 @@ td .tracksList {
 
 /* fixes for tabrow with browsetable */
 #autofilter_target { clear: both;}
-.tabrow { clear: both; }
+.tabrow { clear: both; padding-top: 0.5em; }
 .tabrow .tab { width: auto;}
