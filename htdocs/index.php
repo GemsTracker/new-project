@@ -53,7 +53,6 @@ define('GEMS_LIBRARY_DIR', realpath(GEMS_ROOT_DIR . '/library/Gems'));
 
 // Internal pretty project name - no spaces etc., will be used for tags and IDs!
 define('GEMS_PROJECT_NAME', 'newProject');
-defined('GEMS_PROJECT_NAME_UC') || define('GEMS_PROJECT_NAME_UC', ucfirst(GEMS_PROJECT_NAME));
 
 /**
  * Define application environment
