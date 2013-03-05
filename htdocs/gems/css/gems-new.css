@@ -311,6 +311,10 @@ label.required {
     font-weight: bold;
 }
 
+.larger {
+    font-size: 120% !important;
+}
+
 .leftFloat {
     float: left;
     margin-right: 0.4em;
