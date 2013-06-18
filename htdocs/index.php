@@ -31,13 +31,13 @@
  * Project root file
  *
  * Gems specific startup
- * - Defines GEMS project constants using Erasmus MC directory setup.
- * - Loads database login data.
- * - Goto pre_bootstrap.php
+ * - Defines GEMS project constants
+ * - Loads database login data
+ * - Initiate the bootstrapping
  *
  * @author Matijs de Jong <mjong@magnafacta.nl>
  * @since 1.0
- * @version 1.6
+ * @version $Id$
  * @package Gems
  * @subpackage boot
  */
