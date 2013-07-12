@@ -263,6 +263,8 @@ label.required {
     padding: 2px 0.5em;
 }
 
+pre.mailpreview {white-space: pre-wrap;}
+
 /* *padding + *ovverflow to use only in IE */
 #main {
     background: transparent;
