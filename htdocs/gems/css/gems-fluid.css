@@ -280,6 +280,8 @@ label.required {
     padding: 2px 0.5em;
 }
 
+pre.mailpreview {white-space: pre-wrap;}
+
 #main {
     float: right;
     /* *padding + *overflow to use only in IE 6 */
