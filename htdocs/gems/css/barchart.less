@@ -1,0 +1,100 @@
+/* Barcharts LESS File */
+@fontlight: white; /* light font for dark backgrounds */
+@fontdark: black;  /* dark font for light backgrounds */
+@treshold: 43%;    /* bias towards light or dark */
+@barcolor: #006D8C;
+
+@chartheight: 16em;
+@maxbars: 9;
+@barwidth: 3em;
+@barspace: .2em;
+@labelwidth: 2em;
+
+@media screen, print {
+/* use safe contrast when setting a background color */
+.bgcolor (@a) {
+    background: @a;
+    color: contrast(@a, @fontdark, @fontlight, @treshold);
+}
+
+.barchart-wrapper {
+    page-break-inside: avoid;
+    width: (@maxbars*(@barspace+@barwidth)+@labelwidth); /* maxbars bars + spacer + labelwidth */
+    margin-right: 3em;
+    margin-bottom: 1em;
+    float:left;
+
+    /* define the colors for the bars */
+    .col3 {.bgcolor(@barcolor)}
+    .col2 {.bgcolor(lighten(spin(@barcolor, 5), 10%))}
+    .col1 {.bgcolor(lighten(spin(@barcolor, 10), 20%))}
+    .col4 {.bgcolor(darken(spin(@barcolor, -5), 10%))}
+    .col5 {.bgcolor(darken(spin(@barcolor, -10), 20%))}
+
+    .header {
+        .bgcolor(@fontdark);
+        border: 1px solid @fontdark;
+        width: 100%;
+    }
+
+    & + .buttons {
+        clear: both;
+    }
+
+    .barchart {
+        width:  100%;
+        position: relative;
+        border:  1px solid black;
+        height:  16em;
+
+        background-color: #ddf;
+        background-image: linear-gradient(darken(desaturate(@barcolor, 50%), 30%) 1%, transparent 4%);
+        background-size: 100% 10%;
+
+        .bar {
+            width: 3em;
+            display: inline-block;
+            vertical-align: bottom;
+            border: 1px solid black;
+            box-shadow: 3px 0px 3px #888888;
+            text-align: center;
+            position: relative;
+            top: -1px;
+
+            .value {
+                font-size: .8em;
+                text-align: center;
+            }
+            .info {
+                margin-left: -999em;
+                position: absolute;
+            }
+            &:hover .info {
+                border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.25); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+                position: absolute; left: 1em; top: 1em; z-index: 99;
+                margin-left: 0; width: 100px;
+                padding: 0.8em 1em; border: 1px solid black;
+                .bgcolor(lighten(@fontdark,10%))
+            }
+        }
+
+        .spacer.bar {
+            width: @barspace;
+            border-color: transparent;
+            background: transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+
+        .max, .min {
+            position: absolute;
+            display: inline-block;
+            width: @labelwidth;
+            left: -(@labelwidth);
+        }
+
+        .max { top: -.5em; }
+        .min { top: (@chartheight - .5em); }
+    }
+}
+}
