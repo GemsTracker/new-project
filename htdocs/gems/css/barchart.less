@@ -4,7 +4,7 @@
 @treshold: 43%;    /* bias towards light or dark */
 @barcolor: #006D8C;
 
-@chartheight: 16em;
+@chartheight: 15em; /* related to fontsize, sometimes needs to be adjusted due to rounding issues */
 @maxbars: 9;
 @barwidth: 3em;
 @barspace: .2em;
@@ -44,14 +44,14 @@
             width:  100%;
             position: relative;
             border:  1px solid black;
-            height:  16em;
+            height:  @chartheight;
 
             background-color: #ddf;
             background-image: linear-gradient(darken(desaturate(@barcolor, 50%), 30%) 1%, transparent 4%);
             background-size: 100% 10%;
 
             .bar {
-                width: 3em;
+                width: @barwidth;
                 display: inline-block;
                 vertical-align: bottom;
                 border: 1px solid black;
@@ -95,6 +95,26 @@
 
             .max { top: -.5em; }
             .min { top: (@chartheight - .5em); }
+        }
+    }
+}
+
+@media print {
+    /* shrink a little so it still fits */
+    .barchart-wrapper {
+        font-size: .9em;
+        width: (@maxbars*(@barspace * .5 + @barwidth -.5)+@labelwidth); /* maxbars bars + spacer + labelwidth */
+
+        .barchart {
+            /* no shadow */
+            .bar {
+                width: (@barwidth -.5);
+                box-shadow: 0px 0px 0px transparent;
+            }
+
+            .spacer.bar {
+                width: @barspace * .5;
+            }
         }
     }
 }
