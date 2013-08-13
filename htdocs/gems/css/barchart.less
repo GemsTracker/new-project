@@ -29,10 +29,10 @@
 
         /* define the colors for the bars */
         .col3 {.bgcolor(@barcolor)}
-        .col2 {.bgcolor(lighten(spin(@barcolor, 5), 10%))}
-        .col1 {.bgcolor(lighten(spin(@barcolor, 10), 20%))}
-        .col4 {.bgcolor(darken(spin(@barcolor, -5), 10%))}
-        .col5 {.bgcolor(darken(spin(@barcolor, -10), 20%))}
+        .col2 {.bgcolor(lighten(spin(@barcolor, 10), 20%))}
+        .col1 {.bgcolor(lighten(spin(@barcolor, 20), 10%))}
+        .col4 {.bgcolor(darken(spin(@barcolor, -10), 20%))}
+        .col5 {.bgcolor(darken(spin(@barcolor, -20), 10%))}
 
         .legend { 
             display: none;
@@ -50,9 +50,14 @@
             border:  1px solid black;
             height:  @chartheight;
 
-            background-color: #ddf;
-            background-image: linear-gradient(darken(desaturate(@barcolor, 50%), 30%) 1%, transparent 4%);
-            background-size: 100% 10%;
+            .bgcolor(fade(lighten(spin(@barcolor, 20),20),10%));
+            /*background-image: linear-gradient(darken(desaturate(@barcolor, 50%), 30%) 1%, transparent 4%);
+            background-size: 100% 10%;*/
+
+            a { 
+                text-decoration: none;
+                color: inherit;
+            }
 
             .bar {
                 width: @barwidth;
@@ -79,7 +84,7 @@
                     position: absolute; left: 1em; top: 1em; z-index: 99;
                     margin-left: 0;
                     padding: 0.8em 1em; border: 1px solid black;
-                    .bgcolor(fade(lighten(@fontdark,10%),70))
+                    .bgcolor(fade(lighten(@fontdark,10%),70%))
                 }
             }
 
@@ -100,6 +105,22 @@
 
             .max { top: -.5em; }
             .min { top: (@chartheight - .5em); }
+
+            .ruler {
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                .bgcolor(fade(lighten(spin(@barcolor, 20), 20),80%));
+                /* z-index: 100; */
+            }
+
+            .positive {
+                background: green;
+            }
+
+            .negative {
+                background: red;
+            }
         }
     }
 }
