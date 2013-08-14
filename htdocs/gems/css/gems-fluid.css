@@ -116,6 +116,10 @@ button.ui-datepicker-trigger {
     padding-right: 4px;
 }
 
+a img.file-icon {
+  margin-left: 4px;
+}
+
 input[disabled], .disabled {
     color: #737373;
     font-style: italic;
