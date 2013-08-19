@@ -474,6 +474,10 @@ p.info {
     margin: 0.5em;
 }
 
+.pre {
+    white-space: pre-wrap;
+}
+
 .print-only { display: none; }
 
 .rightAlign {
