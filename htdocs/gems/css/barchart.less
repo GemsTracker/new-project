@@ -3,6 +3,7 @@
 @fontdark: black;  /* dark font for light backgrounds */
 @treshold: 43%;    /* bias towards light or dark */
 @barcolor: #006D8C;
+@background: white;
 
 @chartheight: 15em; /* related to fontsize, sometimes needs to be adjusted due to rounding issues */
 @maxbars: 7;
@@ -50,7 +51,7 @@
             border:  1px solid black;
             height:  @chartheight;
 
-            .bgcolor(fade(lighten(spin(@barcolor, 20),20),10%));
+            .bgcolor(mix(lighten(spin(@barcolor, 20), 20),@background, 10%));   /* mix with background, transparency can give trouble in printing */
             /*background-image: linear-gradient(darken(desaturate(@barcolor, 50%), 30%) 1%, transparent 4%);
             background-size: 100% 10%;*/
 
@@ -101,6 +102,8 @@
                 width: (@labelwidth);
                 left: -(@labelwidth + .2);
                 text-align: right;
+                .bgcolor(@background);    /* so we get the right contrast */
+                background: transparent;  /* but leave transparent to prevent overflow issues */
             }
 
             .max { top: -.5em; }
@@ -110,17 +113,13 @@
                 position: absolute;
                 width: 100%;
                 height: 1px;
-                .bgcolor(fade(lighten(spin(@barcolor, 20), 20),80%));
+                .bgcolor(mix(lighten(spin(@barcolor, 20), 20),@background, 40%));   /* background but 40 instead of 10% fade */
                 /* z-index: 100; */
             }
 
-            .positive {
-                background: green;
-            }
-
-            .negative {
-                background: red;
-            }
+            /* Ruler highlights get solid colors to make it stand out */
+            .positive { background: green; }
+            .negative { background: red; }
         }
     }
 }
