@@ -19,7 +19,7 @@ jQuery.widget("ui.autoSubmitForm", {
         console.log(this.options.targetId);   // Firebug console */
 
         // Bind the events
-        jQuery('input:text, select, textarea', this.element).keyup(function (e) {self.filter(); });
+        jQuery('input:text, textarea', this.element).keyup(function (e) {self.filter(); });
         jQuery('select', this.element).change(function (e) {self.filter(); });
         jQuery('input:checkbox, input:radio', this.element).click(function (e) {self.filter(); });
 
