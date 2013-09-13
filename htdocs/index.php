@@ -49,18 +49,24 @@
  */
 define('GEMS_WEB_DIR', dirname(__FILE__));
 define('GEMS_ROOT_DIR', realpath(GEMS_WEB_DIR . '/../'));
-define('GEMS_LIBRARY_DIR', realpath(GEMS_ROOT_DIR . '/library/Gems'));
 
 // Internal pretty project name - no spaces etc., will be used for tags and IDs!
+// @TODO: Set project name
 define('GEMS_PROJECT_NAME', 'newProject');
+
+/**
+ * Load database login variables and optional local variables
+ */
+require realpath(GEMS_ROOT_DIR . '/var/settings/db.inc.php');
+
 
 /**
  * Define application environment
  */
 if (! defined('APPLICATION_ENV')) {
-    if (getenv('APPLICATION_ENV')) {
-        $env = getenv('APPLICATION_ENV');
-    } else {
+    $env = getenv('APPLICATION_ENV');
+
+    if (! $env) {
         // Erasmus MC processing
         if (isset($_SERVER["HTTP_HOST"]) && (strpos($_SERVER["HTTP_HOST"], 'survey') === false)) {
             $env = 'testing';
@@ -72,13 +78,13 @@ if (! defined('APPLICATION_ENV')) {
     define('APPLICATION_ENV', $env);
 }
 
-// May be needed for strict, depending on server settings
-date_default_timezone_set('Europe/Amsterdam');
+defined('GEMS_TIMEZONE') || define('GEMS_TIMEZONE', 'Europe/Amsterdam');
+defined('GEMS_LIBRARY_DIR') || define('GEMS_LIBRARY_DIR', realpath(GEMS_ROOT_DIR . '/library/Gems'));
 
 /**
- * Load database login variables, Erasmus MC way.
+ * Always set the system timezone!
  */
-// require realpath(GEMS_ROOT_DIR . '/var/settings/db.inc.php');
+date_default_timezone_set(GEMS_TIMEZONE);
 
 /**
  * Start standard GEMS bootstrap.
