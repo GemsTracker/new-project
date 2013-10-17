@@ -1,3 +1,5 @@
+/*jslint browser: true*/
+/*global jQuery */
 
 // Creating the widget
 jQuery.widget("ui.autoSubmitForm", {

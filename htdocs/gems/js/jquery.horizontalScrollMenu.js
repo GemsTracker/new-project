@@ -1,3 +1,6 @@
+/*jslint browser: true*/
+/*global jQuery */
+
 (function( $ ) {
 	$.fn.horizontalScrollMenu = function() {
 		return this.each(function(index) {
@@ -19,7 +22,7 @@
 
 			var menuNext = menu.find('.next');
 			var menuPrev = menu.find('.prev')
-								.addClass('disabled');			
+								.addClass('disabled');
 
 			menuNext.on('click', function(e) {
 				e.preventDefault();
@@ -48,6 +51,6 @@
 					}
 				}
 			});
-		});	
+		});
 	}
 } (jQuery));
