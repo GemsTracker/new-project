@@ -122,6 +122,11 @@
             .negative { background: red; }
         }
     }
+
+    p.chartfooter {
+        clear: both;
+        height: 5em;  /* provide some spacing for mouseover */
+    }
 }
 
 @media print {
@@ -154,11 +159,17 @@
             .bar {
                 width: (@barwidth -.5);
                 box-shadow: 0px 0px 0px transparent;
+                &:hover .info { display:none; } /* don't print the hover */
             }
 
             .spacer.bar {
                 width: @barspace * .5;
             }
         }
+    }
+
+    p.chartfooter {
+        clear: both;
+        height: auto  /* no need for spacing here */
     }
 }
