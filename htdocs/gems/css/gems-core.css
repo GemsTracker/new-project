@@ -83,17 +83,9 @@ button.ui-datepicker-trigger {
 }
 
 .calendar .date {
-    background-color: #2C3539;
+    background-color: #6d6e76;
     border: 1px black solid;
     border-bottom-width: 0;
-    background-image: -webkit-linear-gradient(top, #5E676B, #2C3539 20%, #2C3539 80%, #5E676B);
-    background-image: -moz-linear-gradient(top, #5E676B, #2C3539 20%, #2C3539 80%, #5E676B);
-    background-image: -ms-linear-gradient(top, #5E676B, #2C3539 20%, #2C3539 80%, #5E676B);
-    background-image: -o-linear-gradient(top, #5E676B, #2C3539 20%, #2C3539 80%, #5E676B);
-    background-image: linear-gradient(top, #5E676B, #2C3539 20%, #2C3539 80%, #5E676B);
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     color: white;
     font-weight: bold;
     font-size: 120%;
@@ -108,12 +100,7 @@ button.ui-datepicker-trigger {
 }
 
 .calendar .time {
-    background-color: silver;
-    background-image: -webkit-linear-gradient(top, white 70%, lightgrey 80%, grey 90%);
-    background-image: -moz-linear-gradient(top, white 70%, lightgrey 80%, grey 90%);
-    background-image: -ms-linear-gradient(top, white 70%, lightgrey 80%, grey 90%);
-    background-image: -o-linear-gradient(top, white 70%, lightgrey 80%, grey 90%);
-    background-image: linear-gradient(top, white 70%, lightgrey 80%, grey 90%);
+    background-color: #EFEEEC;
     border: 1px black solid;
     color: black;
     font-size: 110%;
