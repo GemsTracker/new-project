@@ -1,2 +1,2 @@
 @echo off
-php.exe -f %~dp0index.php -- %*
+php.exe -d memory_limit=2048M -f %~dp0index.php -- %*
