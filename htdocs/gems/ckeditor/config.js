@@ -8,4 +8,14 @@ CKEDITOR.editorConfig = function( config )
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
+	config.extraPlugins = 'bbcode';
+	config.toolbar = [
+		[ 'Source','-','Undo','Redo' ],
+		[ 'Find','Replace','-','SelectAll','RemoveFormat' ],
+		[ 'Link', 'Unlink', 'Image', 'SpecialChar' ],
+		'/',
+		[ 'Bold', 'Italic','Underline' ],
+		[ 'NumberedList','BulletedList','-','Blockquote' ],
+		[ 'Maximize' ],
+	];
 };
