@@ -677,6 +677,11 @@ textarea + p.description {
     font-size: .8em;
 }
 
+td.fileAction {
+    text-align: right;
+    width: 80px;
+}
+
 td.tracksList {
     width: 25%;
 }
