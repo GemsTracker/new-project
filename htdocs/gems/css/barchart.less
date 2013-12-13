@@ -6,10 +6,11 @@
 @background: white;
 
 @chartheight: 15em; /* related to fontsize, sometimes needs to be adjusted due to rounding issues */
-@maxbars: 7;
-@barwidth: 3em;
+@chartwidth: 85%;
+@maxbars: 14;
+@barwidth: 1.5em;
 @barspace: .2em;
-@labelwidth: 2em;
+@labelwidth: 6em;
 
 @media screen, print {
     /* use safe contrast when setting a background color */
@@ -23,7 +24,7 @@
     }
     .barchart-wrapper {
         page-break-inside: avoid;
-        width: (@maxbars*(@barspace+@barwidth)+@labelwidth); /* maxbars bars + spacer + labelwidth */
+        width: @chartwidth; /*(@maxbars*(@barspace+@barwidth)+@labelwidth); */ /* maxbars bars + spacer + labelwidth */
         margin-left: (@labelwidth + .2);
         margin-bottom: 1em;
         float:left;
@@ -89,7 +90,7 @@
                 }
             }
 
-            .spacer.bar {
+            .spacer.bar,  {
                 height: 100%;
                 width: @barspace;
                 border-color: transparent;
@@ -97,17 +98,27 @@
                 box-shadow: 0px 0px 0px transparent;
             }
 
-            .max, .min {
+            .spacer.wide.bar {
+                width: @barspace * 3;
+            }
+
+            .max, .min, .label {
                 position: absolute;
                 width: (@labelwidth);
                 left: -(@labelwidth + .2);
                 text-align: right;
                 .bgcolor(@background);    /* so we get the right contrast */
                 background: transparent;  /* but leave transparent to prevent overflow issues */
+                margin-top: -.5em; 
             }
 
-            .max { top: -.5em; }
-            .min { top: (@chartheight - .5em); }
+            .label {
+                font-size: 0.8em; 
+                overflow: hidden;
+                height: 1em;
+            }
+            .max { top: 0% }
+            .min { top: 100% }
 
             .ruler {
                 position: absolute;
@@ -132,8 +143,11 @@
 @media print {
     /* shrink a little so it still fits */
     .barchart-wrapper {
+        page-break-inside:avoid;
         font-size: .9em;
-        width: 45%; /* (@maxbars*(@barspace * .5 + @barwidth -.5)+@labelwidth); */ /* maxbars bars + spacer + labelwidth */
+        width: @chartwidth; /* (@maxbars*(@barspace * .5 + @barwidth -.5)+@labelwidth); */ /* maxbars bars + spacer + labelwidth */
+
+        .header { page-break-after: avoid; }
 
         .legend { 
             width: 100%;
