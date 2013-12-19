@@ -741,6 +741,14 @@ td .tracksList {
     margin: 0 45% 10px 10px;
 }
 
+ul.notallowed li {
+    list-style-image: url('../icons/no_entry.png');
+}
+
+ul.allowed li {
+    list-style-image: url('../icons/ok.png');
+}
+
 .zend_echo {
     font-weight: normal;
 }
