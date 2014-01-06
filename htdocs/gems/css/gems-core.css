@@ -679,7 +679,7 @@ textarea + p.description {
 
 td.fileAction {
     text-align: right;
-    width: 80px;
+    width: 100px;
 }
 
 td.tracksList {
