@@ -682,6 +682,10 @@ td.fileAction {
     width: 100px;
 }
 
+td.rightAlign, th.rightAlign {
+    padding-right: 0.5em;
+}
+
 td.tracksList {
     width: 25%;
 }
