@@ -180,7 +180,11 @@ table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.tim
     color: white;
 }
 
-.toolbox .toolanchor {
+table thead th.selectedColumn {
+    border-top: 2px solid black;
+}
+
+}.toolbox .toolanchor {
     background: darkgray url(local/dropdown.png) no-repeat right center;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
