@@ -28,6 +28,12 @@ span.actionlink {
     font-style: italic;
 }
 
+span.checked {
+    background: url('../icons/ok.png')  no-repeat scroll right center;
+    color: transparent;
+    padding-right: 20px;
+}
+
 a:hover {
     text-decoration: underline;
 }
