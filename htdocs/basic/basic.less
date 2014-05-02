@@ -1,6 +1,38 @@
 /* First load our templates variables */
 @import url('variables.less');
 
+/* mixins */
+.toprounded(@radius: 4px) {
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -moz-border-radius-topright: @radius;
+}
+
+.bottomrounded(@radius: 4px) {
+    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    -moz-border-radius-bottomright: @radius;
+}
+
+.boxshadow(@sizex: 2px, @sizey: 2px, @blur: 4px, @color: #000000) {
+    -moz-box-shadow: @sizex @sizey @blur @color;
+    -webkit-box-shadow: @sizex @sizey @blur @color;
+    box-shadow: @sizex @sizey @blur @color;
+    margin-bottom: @blur;   /* Make sure we see the bottom */ 
+};
+
+.rounded-corners (@radius: 4px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
 a {
     color: @linkcolor;
 }
@@ -13,12 +45,8 @@ a {
 a.actionlink, a.actionlink:link, a.actionlink:visited, a.browselink, a.browselink:link, a.browselink:visited, button.small, button.ui-datepicker-trigger, input.button.small, button, input.button {
     background: @button_backgroundcolor;
     border: @button_bordersize solid @button_bordercolor;
-    border-radius: @button_borderradius;
-    -moz-border-radius: @button_borderradius;
-    -webkit-border-radius: @button_borderradius;
-    box-shadow: 1px 1px 2px darkgrey;
-    -moz-box-shadow: 1px 1px 2px darkgrey;
-    -webkit-box-shadow: 1px 1px 2px darkgrey;
+    .rounded-corners(@button_borderradius);
+    .boxshadow(1px, 1px, 2px, darkgrey);
     color: @button_textcolor;
     margin: 4px 0;
     padding: @button_padding;
@@ -28,9 +56,7 @@ a.actionlink, a.actionlink:link, a.actionlink:visited, a.browselink, a.browselin
 a.actionlink:hover, a.browselink:hover, button:hover.small, button.ui-datepicker-trigger:hover, input.button.small:hover, button:hover, input.button:hover {
     background: @button_hover_backgroundcolor;
     border: @button_bordersize solid @button_hover_bordercolor;
-    box-shadow: 2px 2px 5px darkgray;
-    -moz-box-shadow: 2px 2px 5px darkgray;
-    -webkit-box-shadow: 2px 2px 5px darkgray;
+    .boxshadow(2px, 2px, 5px, darkgrey);
     color: @button_hover_textcolor;
 }
 
@@ -40,12 +66,8 @@ a.actionlink, a.actionlink:link, a.actionlink:visited, a.browselink, a.browselin
 
 span.actionlink, span.browselink {
     border: 1px dotted darkgrey;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    box-shadow: 1px 1px 2px darkgrey;
-    -moz-box-shadow: 1px 1px 2px darkgrey;
-    -webkit-box-shadow: 1px 1px 2px darkgrey;
+    .rounded-corners(4px);
+    .boxshadow(1px, 1px, 2px, darkgrey);
     color: black;
     font-size: 80%;
     margin: 4px 0;
@@ -68,12 +90,8 @@ body {
 #footer, #header_bar {
     background-color: @backgroundcolor;
     border: 1px solid lightgrey;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    box-shadow: 1px 1px 2px black;
-    -moz-box-shadow: 1px 1px 2px black;
-    -webkit-box-shadow: 1px 1px 2px black;
+    .rounded-corners(3px);
+    .boxshadow(1px, 1px, 2px, black);
 }
 
 #header {
@@ -110,15 +128,9 @@ p.info {
 }
 .tab {
     background: lightgrey;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    box-shadow: 2px 0px 2px darkgrey;
-    -moz-box-shadow: 2px 0px 2px darkgrey;
-    -webkit-box-shadow: 2px 0px 2px darkgrey;
+    .toprounded(4px);
+    .boxshadow(2px, 0px, 2px, darkgrey);
+    margin-bottom: 0px; /* reset bottom margin here */
 }
 
 .tab a {
@@ -126,9 +138,8 @@ p.info {
 }
 
 .tab .active {
-    box-shadow: 4px 0px 4px darkgrey;
-    -moz-box-shadow: 4px 0px 4px darkgrey;
-    -webkit-box-shadow: 4px 0px 4px darkgrey;
+    .boxshadow(4px, 0px, 4px, darkgrey);
+    margin-bottom: 0px; /* reset bottom margin here */
 }
 
 table.browser[onclick]:hover, table.browser tbody tr[onclick]:hover, table.displayer tbody[onclick]:hover, table.displayer tbody[onclick]:hover td {
@@ -209,12 +220,7 @@ table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.tim
 
 .toolbox .toolanchor {
     background: darkgray url(local/dropdown.png) no-repeat right center;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
+    .toprounded(4px);
     padding: 2px 1em 2px 4px;
     width: 16em;
 }
@@ -245,14 +251,6 @@ table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.tim
 }
 
 .tooldock {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    box-shadow: 2px 2px 4px darkgray;
-    -moz-box-shadow: 2px 2px 4px darkgray;
-    -webkit-box-shadow: 2px 2px 4px darkgray;
+    .toprounded(4px);
+    .boxshadow(2px, 2px, 4px, darkgrey);    
 }
-
