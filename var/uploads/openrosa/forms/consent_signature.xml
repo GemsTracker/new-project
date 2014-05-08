@@ -4,26 +4,26 @@
     <h:title>consent_signature</h:title>
     <model>
       <instance>
-        <data id="consent.signature" version="1.0">
-          <informedconsent>
+        <data id="consent.signature" version="1.1">
             <consentnotes/>
+            <token/>
             <consentgiven/>
             <signature/>
-          </informedconsent>
           <meta>
             <instanceID/>
           </meta>
         </data>
       </instance>
-      <bind nodeset="/data/informedconsent/consentnotes" readonly="true()" type="string"/>    
-      <bind nodeset="/data/informedconsent/consentgiven" type="string"/>
+      <bind nodeset="/data/consentnotes" readonly="true()" type="string"/>    
+      <bind nodeset="/data/consentgiven" type="string"/>
+      <bind nodeset="/data/token" type="string"/>
       <bind calculate="concat('uuid:', uuid())" nodeset="/data/meta/instanceID" readonly="true()" type="string"/>
     </model>
   </h:head>
   <h:body>
-    <group appearance="field-list" ref="/data/informedconsent">
+    <group appearance="field-list" ref="/data">
       <label>Introduction &amp; Informed Consent</label>
-      <input ref="/data/informedconsent/consentnotes">
+      <input ref="/data/consentnotes">
         <label>Hello. My name is ______________. We are doing a study on X. The data we collect will help the X to X. Can I please speak to the head of your household? 
 
 We very much appreciate your participation in this short survey. The questions will take around 5 to 10 minutes to complete. Any information you provide will be kept strictly confidential. Participation in this survey is voluntary but we hope that you will participate. If there is any question you don’t want to answer, just let me know and I will go to the next question or we can stop the interview. 
@@ -31,10 +31,13 @@ I would be happy to clarify any doubts you may have regarding this survey, do yo
 
 ANSWER ANY QUESTIONS AND ADDRESS CONCERNS.</label>
       </input>
-      <trigger ref="/data/informedconsent/consentgiven">
+      <input ref="/data/token">
+        <label>token</label>
+      </input>
+      <trigger ref="/data/consentgiven">
         <label>May I begin the interview now?</label>
       </trigger>
-      <upload appearance="signature" mediatype="image/*" ref="/data/informedconsent/signature">
+      <upload appearance="signature" mediatype="image/*" ref="/data/signature">
         <label>Signature</label>
       </upload>
     </group>
