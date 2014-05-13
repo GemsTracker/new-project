@@ -26,28 +26,28 @@
     float:left;
     width:200%;
     position:relative;
-    left:160px;         /* menu_abs_width */
+    left: @menuwidth;         /* menu_abs_width */
 }
 
 #col1wrap {
     float:right;
     width:50%;
     position:relative;
-    right:160px;        /* menu_abs_width */
+    right: @menuwidth;        /* menu_abs_width */
 }
 
 #main {
-    margin: 10px 10px 10px 170px; /* margin margin margin margin + menu_abs_width */
+    margin: @menumargin @menumargin @menumargin (@menumargin + @menuwidth); /* margin margin margin margin + menu_abs_width */
     position:relative;
     right:100%;
     overflow:hidden;
 }
 #menu {
-    margin: 10px 10px 10px 10px; /* margin margin margin margin */
+    margin: @menumargin; /* margin margin margin margin */
     float:left;
-    width:140px;        /* menu_abs_width - margin - margin */
+    width: @menuwidth - @menumargin - @menumargin;        /* menu_abs_width - margin - margin */
     position:relative;
-    right:160px;        /* menu_abs_width */
+    right: @menuwidth;        /* menu_abs_width */
 }
 
 /* Header/footer styles */
