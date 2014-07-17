@@ -1,0 +1,62 @@
+/*
+ * This file contains mixins that can be shared to all other templates. 
+ * Each mixin should have a little header to explain how to use it
+ */
+
+/*
+ * Create a linear vertical gradient background between start and endcolor, with 
+ * special IE compatible inline image using base64encode custom function
+ * @see MUtil_Less_View_Helper_HeadLink
+ */
+.gradient (@startColor: #eee, @endColor: white) {
+    // Hardcoded for IE, don't use filter because it breaks rounded corners
+    // http://ie.microsoft.com/testdrive/graphics/svggradientbackgroundmaker/default.html
+    // background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc3NzEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNDNUU3RjkiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM2REMzRjEiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c3NzEpIiAvPgo8L3N2Zz4=);
+    @dataPrefix: ~"url(data:image/svg+xml;base64,";
+    @dataSuffix: ~")";
+    @dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop stop-color="@{startColor}" offset="0"/><stop stop-color="@{endColor}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
+    background-image: ~"@{dataPrefix}"+base64encode(@dataContent)+"@{dataSuffix}";
+    
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor);
+    background-image: -ms-linear-gradient(top, @startColor, @endColor);
+    background-image: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+/* ROUNDED CORNERS */
+/* All corners */
+.rounded-corners (@radius: 4px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+/* Just the top */
+.toprounded(@radius: 4px) {
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -moz-border-radius-topright: @radius;
+}
+
+/* Only the bottom */
+.bottomrounded(@radius: 4px) {
+    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    -moz-border-radius-bottomright: @radius;
+}
+
+/* Create a box shadow for 3-d effect */
+.boxshadow(@sizex: 2px, @sizey: 2px, @blur: 4px, @color: #000000) {
+    -moz-box-shadow: @sizex @sizey @blur @color;
+    -webkit-box-shadow: @sizex @sizey @blur @color;
+    box-shadow: @sizex @sizey @blur @color;
+    margin-bottom: @blur;   /* Make sure we see the bottom */
+};

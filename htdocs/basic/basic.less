@@ -1,37 +1,8 @@
 /* First load our templates variables */
 @import url('variables.less');
 
-/* mixins */
-.toprounded(@radius: 4px) {
-    border-top-left-radius: @radius;
-    border-top-right-radius: @radius;
-    -webkit-border-top-left-radius: @radius;
-    -webkit-border-top-right-radius: @radius;
-    -moz-border-radius-topleft: @radius;
-    -moz-border-radius-topright: @radius;
-}
-
-.bottomrounded(@radius: 4px) {
-    border-bottom-left-radius: @radius;
-    border-bottom-right-radius: @radius;
-    -webkit-border-bottom-left-radius: @radius;
-    -webkit-border-bottom-right-radius: @radius;
-    -moz-border-radius-bottomleft: @radius;
-    -moz-border-radius-bottomright: @radius;
-}
-
-.boxshadow(@sizex: 2px, @sizey: 2px, @blur: 4px, @color: #000000) {
-    -moz-box-shadow: @sizex @sizey @blur @color;
-    -webkit-box-shadow: @sizex @sizey @blur @color;
-    box-shadow: @sizex @sizey @blur @color;
-    margin-bottom: @blur;   /* Make sure we see the bottom */ 
-};
-
-.rounded-corners (@radius: 4px) {
-  border-radius: @radius;
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-}
+/* Mixins */
+@import '../../gems/css/mixins.less';
 
 a {
     color: @linkcolor;
