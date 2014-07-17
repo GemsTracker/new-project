@@ -144,7 +144,7 @@ table.browser tfoot td, table.timeTable tfoot td {
     font-weight: bold;
 }
 
-table.browser tfoot td a, table.browser thead th a, , table.timeTable tfoot td a, table.timeTable thead th a,
+table.browser tfoot td a, table.browser thead th a, table.timeTable tfoot td a, table.timeTable thead th a,
 .toolbox .toolanchor {
     color: #00ffff;
     text-decoration: underline;
@@ -184,7 +184,7 @@ table thead th.selectedColumn {
     border-top: 2px solid black;
 }
 
-}.toolbox .toolanchor {
+.toolbox .toolanchor {
     background: darkgray url(local/dropdown.png) no-repeat right center;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
