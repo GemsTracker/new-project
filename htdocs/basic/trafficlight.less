@@ -38,14 +38,28 @@ div.loading {
     background-repeat: no-repeat;
 }
 
+.wrapper {
+    .trackheader {
+        .gradient(@table_headerbackgroundcolor, @table_evenrowcolor);
+        color: @textcolor;
+        padding: .5em;
+        border-top: 4px solid @textcolor;
+        
+        .tracktitle { font-size: 1.2em; font-weight: bold;}
+        .trackinfo {font-style: italic;}
+        .trackdate {}
+    }
+}
+
 .scrollContainer {
     width: 100%;
     overflow-x: scroll;
 }
 
 .cvacontainer {
-    min-height: 20em;
-    margin-top: 1em;
+    /*min-height: 20em;*/
+    display: inline-block;
+    padding: .5em 0em;
     width: 1500em;
 
     .day {
@@ -57,10 +71,10 @@ div.loading {
         background-position-x: 1em;
     }
 
-    .dayheader {
+    .dayheader {     
         width: 100%;
         display: inline-block;
-        .gradient(@table_headerbackgroundcolor, @table_evenrowcolor);
+        .gradient(@table_evenrowcolor, @table_headerbackgroundcolor);
         color: @textcolor;
         padding: 5px;
         .toprounded(45px);
@@ -71,17 +85,30 @@ div.loading {
         box-sizing: border-box;
         border: 1px solid @button_bordercolor;
 
-        h1, h2, h3 { color: @lightfont; margin: 0px; }
+        .roundDescription { 
+            color: @lightfont; 
+            margin: 0px; 
+            line-height: 1em;
+            height: 3em;
+            font-size: 1.2em;
+            font-weight: bold;
+            float: none;
+        }
     }
     .doelgroep {
         margin: 11px 0 0 0;
         background: @table_evenrowcolor;
         color: @textcolor;
-        padding: 0px 0px 0px 0px;
+        padding: 0px;
         .rounded-corners(8px);
         border-top-left-radius: 0px;
         -webkit-border-top-left-radius: 0px;
         -moz-border-radius-topleft: 0px;
+        
+        .title {
+            display:inline-block;
+            padding: 8px 0px;   /* Easier for touch interface */
+        }
 
         .progress {
             width:  100%;
