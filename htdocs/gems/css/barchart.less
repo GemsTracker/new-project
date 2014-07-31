@@ -21,11 +21,11 @@
         float:left;
 
         /* define the colors for the bars */
-        .col3 {.bgcolor(@barcolor)}
-        .col2 {.bgcolor(lighten(spin(@barcolor, 10), 20%))}
-        .col1 {.bgcolor(lighten(spin(@barcolor, 20), 10%))}
-        .col4 {.bgcolor(darken(spin(@barcolor, -10), 20%))}
-        .col5 {.bgcolor(darken(spin(@barcolor, -20), 10%))}
+        .col3 {.bgcolor(@barcolor);}
+        .col2 {.bgcolor(lighten(spin(@barcolor, 10), 20%));}
+        .col1 {.bgcolor(lighten(spin(@barcolor, 20), 10%));}
+        .col4 {.bgcolor(darken(spin(@barcolor, -10), 20%));}
+        .col5 {.bgcolor(darken(spin(@barcolor, -20), 10%));}
 
         .legend { 
             display: none;
@@ -77,11 +77,11 @@
                     position: absolute; left: 1em; top: 1em; z-index: 99;
                     margin-left: 0;
                     padding: 0.8em 1em; border: 1px solid black;
-                    .bgcolor(fade(lighten(@fontdark,10%),70%))
+                    .bgcolor(fade(lighten(@fontdark,10%),70%));
                 }
             }
 
-            .spacer.bar,  {
+            .spacer.bar  {
                 height: 100%;
                 width: @barspace;
                 border-color: transparent;
