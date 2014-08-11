@@ -1,0 +1,182 @@
+@media print {
+    body.print {
+        #all,
+        .zend_echo,
+        .ui-dialog-titlebar
+        {
+            display: none;
+        }
+
+        /* Reset the container */
+        .ui-dialog {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            bottom: auto !important;
+        }
+        .ui-dialog,
+        .printable { 
+            width: 100% !important; 
+            height: auto !important;
+            display: inline-block;
+        }
+     }
+     
+     #modalpopup { /*background: @background;*/ }
+}
+
+div.loading {
+    /*background: url('../local/ajax-loader.gif'); */
+    background-position: center;    
+    width: 10em;
+    height: 10em;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    .trackheader {
+        /*.gradient(@darkback, @mediumback);
+        color: @darkfont;*/
+        padding: .5em;
+        border-top: 4px solid @fontdark;
+        
+        .tracktitle, .trackinfo {
+            display: inline-block;
+            margin-right: .5em;
+        }
+        .tracktitle { font-size: 1.2em; font-weight: bold;}
+        .trackinfo {font-style: italic;}
+        .trackdate {}
+    }
+}
+
+.scrollContainer {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.cvacontainer {
+    /*min-height: 20em;*/
+    display: inline-block;
+    padding: .5em 0em;
+    width: 1500em;
+
+    .day {
+        float: left;
+        margin-right: .5em;
+        width: 10.5em;
+        /*background: repeat-y url('../local/bluesquare.gif');
+        background-size: 5px 5px;
+        background-position-x: 1em;*/
+    }
+
+    .dayheader {
+        width: 100%;
+        display: inline-block;
+        /*.gradient(@mediumback, @darkback);
+        color: @darkfont;*/
+        padding: 5px;
+        .toprounded(45px);
+        border-top-left-radius: 0px;
+        -webkit-border-top-left-radius: 0px;
+        -moz-border-radius-topleft: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        border: 1px solid @fontdark;
+
+        .roundDescription { 
+            /*color: @lightfont; */
+            margin: 0px; 
+            line-height: 1em;
+            height: 3em;
+            font-size: 1.2em;
+            font-weight: bold;
+            float: none;
+        }
+    }
+    .doelgroep {
+        margin: 11px 0 0 0;
+        /*background: @darkback;
+        color: @darkfont;*/
+        padding: 0px;
+        .rounded-corners(8px);
+        border-top-left-radius: 0px;
+        -webkit-border-top-left-radius: 0px;
+        -moz-border-radius-topleft: 0px;
+        
+        .title {
+            display:inline-block;
+            padding: 8px 0px;   /* Easier for touch interface */
+        }
+
+        .progress {
+            width:  100%;
+            .bottomrounded(8px);
+            overflow: hidden;
+            /* color: white; */
+            font-weight: bold;
+
+            div {
+                float: left;
+                overflow: hidden;
+                text-align: center;
+                font-size: .6em;
+
+                &.missed {
+                    background: @missed;
+                }
+                &.open {
+                    background: @open;
+                }
+                &.answered {
+                    background: @answered;
+                }
+            }
+        }
+    }
+    div.token {
+        margin: 2px 4px;
+        display: inline;
+
+        &.missed .actionlink {
+            border-left: 5px solid @missed;
+        }
+        &.open .actionlink {
+            border-left: 5px solid @open;
+        }
+        &.answered .actionlink {
+            border-left: 5px solid @answered;
+        }
+
+        .actionlink {
+            white-space: normal;    // Allow to wrap when using long titles
+            border: 2px solid transparent;
+            background: @background;
+            box-shadow: none;
+            height: auto;
+            width: 10em;
+            .rounded-corners(8px);
+            padding: 2px 5px;
+
+            &:hover {
+                /*color: @mediumfont;*/
+                /*background: #F7F9C0;*/
+                .boxshadow(2px);
+                position: relative;
+                top: -2px;
+                left: -2px;
+            }
+
+            span { 
+                font-style: italic; 
+                font-weight: bold;
+            }
+
+            .missed { color: @missed; }
+            .answered { color: @answered; }
+            .open { color: @open; }
+
+        }
+    }
+}
