@@ -1,0 +1,199 @@
+/* First load our templates variables */
+@import url('variables.less');
+
+/* Mixins */
+@import '../gems/css/mixins.less';
+
+@import '../basic/trafficlight.less';
+
+#header {
+    background: url(../basic/local/pulse.gif) repeat-x 400px bottom; /* change 400px to move left or right */
+    height: 80px;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+    padding: 0;
+}
+
+#footer, #header_bar {
+    background-color: @headerbackground;
+    border: 1px solid lightgrey;
+    .rounded-corners(3px);
+    .boxshadow(1px, 1px, 2px, black);
+}
+
+#header_bar #languages span {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.navbar li.active > a {
+	color: @menu_active_linkcolor;
+    font-weight: bold;
+}
+
+.subnav {
+    margin-left: 25px;
+}
+
+@media (max-width: 767px) /* @grid-float-breakpoint -1 */
+{
+    .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    }
+    #header {
+        margin-top: 40px;
+    }
+}
+
+.print-only {
+    display: none;
+}
+
+.disabled {
+    font-style: italic;
+}
+
+.toolbox {
+    display: inline;
+    margin: 0.5em 0 0 0.5em;
+    position: relative;
+
+    .toolanchor {
+        display: inline-block;
+        background: white url(../basic/local/dropdown.png) no-repeat right center;
+        .toprounded(4px);
+        padding: 2px 1em 2px 4px;
+        width: 16em;
+    }
+
+    a.toolanchor {
+        font-weight: bold;
+    }
+
+    &:hover ul {
+        display: inline;
+        max-height: 18.5em;
+        left: 0;
+        overflow: auto;
+        position: absolute;
+        top: 1.2em;
+    }
+
+    ul {
+        display: none;
+        list-style-type: none;
+        position: absolute;
+        z-index: 100;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 0;
+        background: #eeeeee;
+        width: 16.5em;
+
+
+        li {
+            list-style-type: none;
+            margin: 1px 3px;
+            width: 15em;
+            
+            a.add {
+                display: inline-block;
+                margin: 1px 0;
+                overflow: hidden;
+                padding: 1px 2px;
+                height: 1.1em;
+                overflow: hidden;
+                width: 13em;
+            }
+
+            a.right {
+                width: 16px;
+            }
+
+            a:hover {
+                background: gray;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.tooldock {
+    padding: 5px;
+    background-color: #eeeeee;
+    .toprounded(4px);
+    .boxshadow(2px, 2px, 4px, darkgrey);
+}
+
+.compliance {
+    .rounds {
+        overflow: hidden;
+        white-space: pre;
+    }
+
+    .rounds th {
+        border-top: transparent none;
+    }
+
+    td.answered {
+        background: transparent url(../gems/icons/ok.png) no-repeat center center;
+    }
+
+    td.missed {
+        background: transparent url(../gems/icons/nav_plain_red.png) no-repeat center center;
+    }
+
+    td.newRound, th.newRound {
+        border-left-width: 3px;
+    }
+
+    td.open {
+        background: transparent url(../gems/icons/nav_up_blue.png) no-repeat center center;
+    }
+
+    td.round, td.round a {
+        color: transparent;
+    }
+
+    td.round, th.round {
+        min-width: 14px;
+        max-width: 14px;
+        overflow: hidden;
+        text-align: center;
+        width: 14px;
+    }
+
+    td.unknown {
+        background: transparent url(../gems/icons/nav_flat_blue.png) no-repeat center center;
+    }
+
+    td.waiting {
+        background: transparent url(../gems/icons/nav_plain_blue.png) no-repeat center center;
+    }
+
+    td.empty {
+        background: transparent url(../gems/icons/empty.png) no-repeat center center;
+    }
+}
+
+table tbody td.selectedColumn, table tfoot td.selectedColumn, table thead th.selectedColumn {
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+}
+
+table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.timeTable thead th.selectedColumn, table.timeTable td[onclick]:hover, table.timeTable th[onclick]:hover {
+    border-color: lightgrey;
+    background-color: lightgrey;
+}
+
+.pagination-index {
+    margin: 20px 0px;
+    .pull-right;
+}
+
+.taberror a, .taberror a span {
+    color: #DD0000;
+}
