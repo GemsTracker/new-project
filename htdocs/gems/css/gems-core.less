@@ -6,16 +6,40 @@
 
 a {
     text-decoration: none;
+    .actionlink {
+        font-style: normal;
+        text-decoration: none;
+    }
+    :hover {
+        text-decoration: underline;
+    }
+    [href^="mailto:"] {
+        background: transparent url(../images/mail.png) no-repeat scroll right center;
+        padding-right: 20px;
+    }
+    :hover[href^="mailto:"] {
+        text-decoration: underline !important;
+    }
+
+    .globe {
+        background: transparent url(../images/globe.png) no-repeat scroll right center;
+        padding-right: 20px;
+    }
+
+    .pdf {
+        background: transparent url(../images/pdf_small.gif) no-repeat scroll right center;
+        padding-right: 20px !important;
+    }
+
+    img.file-icon {
+      margin-left: 4px;
+    }
 }
 
 .actionlink {
     white-space: nowrap;
 }
 
-a.actionlink {
-    font-style: normal;
-    text-decoration: none;
-}
 
 a.actionlink + a.actionlink,
 a.actionlink + span.actionlink,
@@ -26,33 +50,6 @@ span.actionlink + span.actionlink {
 
 span.actionlink {
     font-style: italic;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a[href^="mailto:"] {
-    background: transparent url(../images/mail.png) no-repeat scroll right center;
-    padding-right: 20px;
-}
-
-a:hover[href^="mailto:"] {
-    text-decoration: underline !important;
-}
-
-a.globe {
-    background: transparent url(../images/globe.png) no-repeat scroll right center;
-    padding-right: 20px;
-}
-
-a.pdf {
-    background: transparent url(../images/pdf_small.gif) no-repeat scroll right center;
-    padding-right: 20px !important;
-}
-
-a img.file-icon {
-  margin-left: 4px;
 }
 
 .askRound {
@@ -82,84 +79,86 @@ button.ui-datepicker-trigger {
     vertical-align: middle;
 }
 
-.calendar .date {
-    background-color: #6d6e76;
-    border: 1px black solid;
-    border-bottom-width: 0;
-    color: white;
-    font-weight: bold;
-    font-size: 110%;
-    text-align: center;
-}
+.calendar {
+    .date {
+        background-color: #6d6e76;
+        border: 1px black solid;
+        border-bottom-width: 0;
+        color: white;
+        font-weight: bold;
+        font-size: 110%;
+        text-align: center;
+    }
 
-.calendar span.date, .calendar span.time {
-    text-align: center;
-    display: block;
-    height: 110%;
-    padding: 0 0.5em;
-}
+    span.date, span.time {
+        text-align: center;
+        display: block;
+        height: 110%;
+        padding: 0 0.5em;
+    }
 
-.calendar .time {
-    background-color: #EFEEEC;
-    border: 1px black solid;
-    color: black;
-    font-size: 110%;
-    padding: 0 2px;
+    .time {
+        background-color: #EFEEEC;
+        border: 1px black solid;
+        color: black;
+        font-size: 110%;
+        padding: 0 2px;
+    }
 }
 
 .centerAlign {
     text-align: center;
 }
+.compliance {
+    .rounds {
+        overflow: hidden;
+        white-space: pre;
+    }
 
-.compliance .rounds {
-    overflow: hidden;
-    white-space: pre;
+    .rounds th {
+        border-top: transparent none;
+    }
+
+    td.answered {
+        background: transparent url(../icons/ok.png) no-repeat center center;
+    }
+
+    td.missed {
+        background: transparent url(../icons/nav_plain_red.png) no-repeat center center;
+    }
+
+    td.newRound, th.newRound {
+        border-left-width: 3px;
+    }
+
+    td.open {
+        background: transparent url(../icons/nav_up_blue.png) no-repeat center center;
+    }
+
+    td.round, td.round a {
+        color: transparent;
+    }
+
+    td.round, th.round {
+        min-width: 14px;
+        max-width: 14px;
+        overflow: hidden;
+        text-align: center;
+        width: 14px;
+    }
+
+    td.unknown {
+        background: transparent url(../icons/nav_flat_blue.png) no-repeat center center;
+    }
+
+    td.waiting {
+        background: transparent url(../icons/nav_plain_blue.png) no-repeat center center;
+    }
+
+    td.empty {
+        background: transparent url(../icons/empty.png) no-repeat center center;
+    }
 }
-
-.compliance .rounds th {
-    border-top: transparent none;
-}
-
-.compliance td.answered {
-    background: transparent url(../icons/ok.png) no-repeat center center;
-}
-
-.compliance td.missed {
-    background: transparent url(../icons/nav_plain_red.png) no-repeat center center;
-}
-
-.compliance td.newRound, .compliance th.newRound {
-    border-left-width: 3px;
-}
-
-.compliance td.open {
-    background: transparent url(../icons/nav_up_blue.png) no-repeat center center;
-}
-
-.compliance td.round, .compliance td.round a {
-    color: transparent;
-}
-
-.compliance td.round, .compliance th.round {
-    min-width: 14px;
-    max-width: 14px;
-    overflow: hidden;
-    text-align: center;
-    width: 14px;
-}
-
-.compliance td.unknown {
-    background: transparent url(../icons/nav_flat_blue.png) no-repeat center center;
-}
-
-.compliance td.waiting {
-    background: transparent url(../icons/nav_plain_blue.png) no-repeat center center;
-}
-
-.compliance td.empty {
-    background: transparent url(../icons/empty.png) no-repeat center center;
-}
-
 .currentRow {
     background-color: aqua;
     border: 3px solid darkblue !important;
@@ -199,13 +198,13 @@ div.errors .alert {
     -webkit-border-radius: 6px;
     display: inline-block;
     margin: 2px;
-    padding: 5px 2px;
-}
-div.errors .alert button.close {
-  display: none;
-}
-div.errors .alert ul {
-  margin-left: 20px;
+    padding: 5px 20px;
+    button.close {
+      display: none;
+    }
+    ul {
+      margin-left: 20px;
+    }
 }
 
 .errors,
@@ -319,78 +318,81 @@ pre.mailpreview {white-space: pre-wrap;}
     padding: 10px 5px 0 5px;
 }
 
-#main form dd {
-    display: inline-block;
-    *display: inline;
-    margin: 0 10px;
-}
+#main {
+    form dd {
+        display: inline-block;
+        *display: inline;
+        margin: 0 10px;
+    }
 
-#main form dt {
-    margin: 0;
-}
+    form dt {
+        margin: 0;
+    }
 
-#main form dt label {
-    clear: left;
-    float: left;
-    margin: 0 0.25em 0 0;
-}
+    form dt label {
+        clear: left;
+        float: left;
+        margin: 0 0.25em 0 0;
+    }
 
-#main ul {
-    margin-bottom: 0.75em;
-    margin-top: 0.75em;
-}
+    ul {
+        margin-bottom: 0.75em;
+        margin-top: 0.75em;
+    }
 
-#main #tabContainer ul {
-    margin-bottom: 0em;
-    margin-top: 0em;
-}
+    #tabContainer ul {
+        margin-bottom: 0em;
+        margin-top: 0em;
+    }
 
-#main .tooldock .toolbox ul {
-    margin-bottom: 0;
-    margin-top: 0;
+    .tooldock .toolbox ul {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 }
+#menu {
+    .navigation {
+        margin-left: 10px;
+    }
 
-#menu .navigation {
-    margin-left: 10px;
-}
+    .navigation .active {
+        font-weight: bold;
+    }
 
-#menu .navigation .active {
-    font-weight: bold;
-}
+    ul {
+        margin-bottom: 0;
+    }
 
-#menu ul {
-    margin-bottom: 0;
-}
+    ul li ul {
+        margin: 0 0 0.25em 1em;
+    }
 
-#menu ul li ul {
-    margin: 0 0 0.25em 1em;
-}
+    ul li a {
+        display: block;
+        *height: 1%; /* IE 6 Fix */
+        margin: 0;
+        padding: 0 0 0 0.5em;
+        text-indent: -0.5em;
+        *width: 115px; /* IE 6 Fix */
+    }
 
-#menu ul li a {
-    display: block;
-    *height: 1%; /* IE 6 Fix */
-    margin: 0;
-    padding: 0 0 0 0.5em;
-    text-indent: -0.5em;
-    *width: 115px; /* IE 6 Fix */
-}
+    ul li a.breakBefore {
+        border-top: 1px dotted;
+        margin: 3px 4px 0 0;
+        padding: 2px 0 0 0;
+    }
 
-#menu ul li a.breakBefore {
-    border-top: 1px dotted;
-    margin: 3px 4px 0 0;
-    padding: 2px 0 0 0;
-}
+    ul li a.noParameters {
+        font-style: italic;
+    }
 
-#menu ul li a.noParameters {
-    font-style: italic;
-}
+    .navigation .active ul li {
+        font-weight: normal;
+    }
 
-#menu .navigation .active ul li {
-    font-weight: normal;
-}
-
-#menu .navigation .active ul li.active {
-    font-weight: bold;
+    .navigation .active ul li.active {
+        font-weight: bold;
+    }
 }
 
 .middleAlign {
@@ -429,30 +431,29 @@ p.info {
 .search {
     line-height: 250%;
     margin: 0.5em 0;
-}
+    input {
+        margin: 0 0.2em;
+    }
+    .inputgroup {
+        border: 2px solid;
+        border-bottom-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        clear: both;
+        float: left;
+        line-height: 125%;
+        margin: 0 auto 0.25em 0;
+        padding: 0.25em 0.5em 0.25em;
+    }
 
-.search input {
-    margin: 0 0.2em;
-}
 
-.search .inputgroup {
-    border: 2px solid;
-    border-bottom-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    clear: both;
-    float: left;
-    line-height: 125%;
-    margin: 0 auto 0.25em 0;
-    padding: 0.25em 0.5em 0.25em;
-}
+    select {
+        width: 16em;
+    }
 
-.search select {
-    width: 16em;
-}
-
-.search select.minimal {
-    width: auto;
+    select.minimal {
+        width: auto;
+    }
 }
 
 select {
@@ -520,55 +521,57 @@ table.formTable td[colspan="2"].label {
     text-align: left;
 }
 
-table tr[onclick]:hover,
-table td[onclick]:hover,
-table th[onclick]:hover {
-    cursor: pointer;
-}
+table {
+    table tr[onclick]:hover,
+    table td[onclick]:hover,
+    table th[onclick]:hover {
+        cursor: pointer;
+    }
 
-table .question {
-    text-indent: -1em;
-    padding-left: 1em;
-}
+    table .question {
+        text-indent: -1em;
+        padding-left: 1em;
+    }
 
-table .question_sub {
-    padding-left: 1em;
-}
+    table .question_sub {
+        padding-left: 1em;
+    }
 
-table td, table th {
-    padding: 2px 4px;
-    vertical-align: top;
-}
+    table td, table th {
+        padding: 2px 4px;
+        vertical-align: top;
+    }
 
-table td.selectedColumn, table th.selectedColumn {
-    border-left: 2px solid;
-    border-right: 2px solid;
-}
+    table td.selectedColumn, table th.selectedColumn {
+        border-left: 2px solid;
+        border-right: 2px solid;
+    }
 
-table tfoot td.selectedColumn, table tfoot th.selectedColumn {
-    border-bottom: 2px solid;
-}
+    table tfoot td.selectedColumn, table tfoot th.selectedColumn {
+        border-bottom: 2px solid;
+    }
 
-table td.date, table td.token {
-    white-space: pre;
-    /* width: 7em; */
-}
+    table td.date, table td.token {
+        white-space: pre;
+        /* width: 7em; */
+    }
 
-table td.timeResult, table th.timeResult {
-    width: 5em;
-}
+    table td.timeResult, table th.timeResult {
+        width: 5em;
+    }
 
-table th {
-    text-align: left;
-}
+    table th {
+        text-align: left;
+    }
 
-table tr.selectedRow td.selectedColumn {
-    border-bottom: 2px solid;
-    font-weight: bold;
-}
+    table tr.selectedRow td.selectedColumn {
+        border-bottom: 2px solid;
+        font-weight: bold;
+    }
 
-table tr.selectedRow td.selectedColumn, table thead th.selectedColumn {
-    border-top: 2px solid;
+    table tr.selectedRow td.selectedColumn, table thead th.selectedColumn {
+        border-top: 2px solid;
+    }
 }
 
 table.timeTable th a {
@@ -583,49 +586,48 @@ table.timeTable td a, table.timeTable td a:hover {
     float: left;
     margin-right: 5px;
     /* optionally set a fixed with here for aligning */
-}
 
-.tab-displaygroup label {
-    display: inline-block; /* otherwise with won't be applied */
-    width: 5em;
-}
+    label {
+        display: inline-block; /* otherwise with won't be applied */
+        width: 5em;
+    }
 
-.tab-displaygroup input,
-.tab-displaygroup select
-{
-    /* Set a default with so things will align */
-    max-width: 6em;
+    input,
+    select
+    {
+        /* Set a default with so things will align */
+        max-width: 6em;
+    }
 }
-
 .tabrow {
     margin: 0.5em 0 0 0;
     *margin-top: 0;
     padding: 0;
     *padding-top: 0.5em;
-}
 
-.tabrow .tab {
-    border: 1px solid #000;
-    border-bottom-width: 0px;
-    float: left;
-    margin: 1px 0.5em 0 0;
-    padding: 0.2em;
-    text-align: center;
-    width: 8em;
-}
+    .tab {
+        border: 1px solid #000;
+        border-bottom-width: 0px;
+        float: left;
+        margin: 1px 0.5em 0 0;
+        padding: 0.2em;
+        text-align: center;
+        width: 8em;
+    }
 
-.tabrow .tab.active {
-    border: 2px solid #000;
-    border-bottom-width: 0px;
-    font-weight: bold;
-    margin-top: 0;
-}
+    .tab.active {
+        border: 2px solid #000;
+        border-bottom-width: 0px;
+        font-weight: bold;
+        margin-top: 0;
+    }
 
-.tabrow .tab a {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    .tab a {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 }
 
 textarea + p.description {
@@ -636,50 +638,50 @@ textarea + p.description {
     display: inline;
     margin: 0.5em 0 0 0.5em;
     position: relative;
-}
 
-.toolbox .toolanchor {
-    display: inline-block;
-}
+    .toolanchor {
+        display: inline-block;
+    }
 
-.toolbox a.toolanchor {
-    font-weight: bold;
-}
+    a.toolanchor {
+        font-weight: bold;
+    }
 
-.toolbox ul {
-    display: none;
-    list-style-type: none;
-    position: absolute;
-    z-index: 100;
-}
+    ul {
+        display: none;
+        list-style-type: none;
+        position: absolute;
+        z-index: 100;
+    }
 
-.toolbox:hover ul {
-    display: inline;
-    max-height: 18.5em;
-    left: 0;
-    overflow: auto;
-    position: absolute;
-    top: 1.2em;
-}
+    hover ul {
+        display: inline;
+        max-height: 18.5em;
+        left: 0;
+        overflow: auto;
+        position: absolute;
+        top: 1.2em;
+    }
 
-.toolbox ul li {
-    list-style-type: none;
-    margin: 1px 3px;
-}
+    ul li {
+        list-style-type: none;
+        margin: 1px 3px;
+    }
 
-.toolbox ul li a.add {
-    display: inline-block;
-    margin: 1px 0;
-    overflow: hidden;
-    padding: 1px 2px;
-}
+    ul li a.add {
+        display: inline-block;
+        margin: 1px 0;
+        overflow: hidden;
+        padding: 1px 2px;
+    }
 
-.toolbox ul li a.right {
-    width: 16px;
-}
+    ul li a.right {
+        width: 16px;
+    }
 
-.toolbox ul li a:hover {
-    text-decoration: none;
+    ul li a:hover {
+        text-decoration: none;
+    }
 }
 
 .tooldock {
