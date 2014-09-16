@@ -197,7 +197,6 @@ div.errors .alert {
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
-    display: inline-block;
     margin: 2px;
     padding: 5px 2px;
 }
@@ -216,7 +215,7 @@ div.errors .alert ul {
     font-weight: bold;
 }
 
-.errors, .zend_echo {
+.zend_echo {
     background: #FAF8CC;
     margin: 2px;
     padding: 0.25em 0.5em;
