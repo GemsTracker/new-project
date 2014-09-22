@@ -1,7 +1,8 @@
 Options +FollowSymlinks
 
 php_flag magic_quotes_gpc off
-php_value memory_limit 32M
+#Need at least 128M, but more is always better
+#php_value memory_limit 128M
 
 #SetEnv APPLICATION_ENV development
 
