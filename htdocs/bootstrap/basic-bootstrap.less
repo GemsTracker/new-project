@@ -1,10 +1,7 @@
 /* First load our templates variables */
-@import url('variables.less');
 
 /* Mixins */
 @import '../gems/css/mixins.less';
-
-@import '../basic/trafficlight.less';
 
 html,
 body {
@@ -32,9 +29,8 @@ body {
     }
 }
 
-
 #header {
-    height: 80px;
+    min-height: 80px;
     margin: 10px auto 0 auto;
     overflow: hidden;
     padding: 0;
@@ -45,24 +41,26 @@ body {
     font-weight: bold;
 }
 
-.navbar li.active > a {
-	color: @menu_active_linkcolor;
-    font-weight: bold;
-}
-
 .subnav {
     margin-left: 25px;
 }
 
-@media (max-width: 767px) /* @grid-float-breakpoint -1 */
-{
-    .navbar {
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    }
-    #header {
-        margin-top: 40px;
+@media (max-width: 768px) {
+    #menu {
+        max-height: 100%;
+        overflow-x: auto;
+        z-index: 100;
+        .navbar-header {
+            position: fixed;
+            right: 2%;
+            z-index: 100;
+            width: 96%;
+            background: #f8f8f8;
+        }
+        
+        .navbar-collapse {
+            margin-top: 50px;
+        }
     }
 }
 
@@ -90,7 +88,7 @@ body {
     a.toolanchor {
         background-color: @toolbox_backgroundcolor;
         color: @toolbox_textcolor;
-        font-weight: bold;
+        font-weight: normal;
     }
 
     &:hover ul {
@@ -110,9 +108,8 @@ body {
         margin-bottom: 0;
         margin-top: 0;
         padding: 0;
-
+        background: @toolbox_dropdown_backgroundcolor;
         width: 16.5em;
-
 
         li {
             list-style-type: none;
@@ -121,6 +118,7 @@ body {
             background: @toolbox_dropdown_backgroundcolor;
             color: @toolbox_dropdown_textcolor;
             a {
+                color: @toolbox_dropdown_textcolor;
                 &:hover {
                     color: @toolbox_hover_textcolor;
                     background-color: @toolbox_hover_backgroundcolor;
@@ -132,7 +130,7 @@ body {
                 margin: 1px 0;
                 overflow: hidden;
                 padding: 1px 2px;
-                height: 1.2em;
+                height: 1.4em;
                 overflow: hidden;
                 width: 13em;
             }
@@ -175,6 +173,119 @@ table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.tim
 }
 .checkbox-extlabel .help-block {
     margin-top: 20px;
+}
+
+.rightFloat {
+    float: right;
+}
+
+.sortAsc,
+.sortAscSelected,
+.sortDescSelected {
+  line-height: 1.3em;
+  padding-bottom: 7px;
+}
+.sortAsc:hover,
+.sortAscSelected,
+.sortDescSelected:hover {
+  background: transparent url(../gems/images/sort_asc.png) no-repeat scroll center bottom;
+}
+a.sortAscSelected:hover,
+a.sortDescSelected {
+  background: transparent url(../gems/images/sort_desc.png) no-repeat scroll center bottom;
+}
+
+label.required::after {
+    content: " *";
+    color: red;
+}
+
+#ui-datepicker-div {
+    display: none;
+}
+
+
+
+/* Template Variables */
+
+body {
+    background-color: @background;
+    color: @textcolor;
+}
+#header {
+    background-color: @headerbackground;
+    color: @headertextcolor;
+}
+#header_bar {
+    background-color: @headerbarbackground;
+    color: @headertextcolor;
+}
+#footer {
+    background-color: @footerbackground;
+}
+a {
+    color: @linkcolor;
+}
+
+#menu {
+    .nav>li>a {
+        color: @menu_linkcolor;
+    }
+    .nav>li.active>a {
+        color: @menu_active_linkcolor;
+    }
+    .nav>li>a:hover {
+        background-color: @menu_hover_backgroundcolor;
+    }
+    .navbar-default {
+        background-color: @menu_backgroundcolor;
+    }
+}
+
+table {
+    th {
+        color: @table_headertextcolor;
+        background: @table_headerbackgroundcolor;
+        a {
+            color: @table_headerlinkcolor;
+        }
+    }
+    tbody {
+        td {
+            color: @table_textcolor;
+        }
+    }
+    &.table-striped > tbody > tr:nth-child(odd) > td {
+        background-color: @table_oddrow_background_color;
+        color: @table_oddrow_text_color;
+    }
+    &.table-striped > tbody > tr:nth-child(even) > td {
+        background-color: @table_evenrow_background_color;
+        color: @table_evenrow_text_color;
+    }
+    &.table-hover > tbody > tr:hover > td,
+    &.table-hover > tbody > tr:hover > th {
+      background-color: @table_hover_backgroundcolor;
+    }
+}
+
+.btn {
+    border-radius: @button_borderradius;
+    border-size: @button_bordersize;
+}
+.btn-primary {
+    color: @button_textcolor;
+    background-color: @button_backgroundcolor;
+    border-color: @button_bordercolor;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: @button_hover_textcolor;
+  background-color: @button_hover_backgroundcolor;
+  border-color: @button_hover_bordercolor;
 }
 
 .compliance {
@@ -227,89 +338,3 @@ table tfoot td.selectedColumn, table tr.selectedRow td.selectedColumn, table.tim
         background: transparent url(../gems/icons/empty.png) no-repeat center center;
     }
 }
-
-.rightFloat {
-    float: right;
-}
-
-label.required::after {
-    content: " *";
-    color: red;
-}
-
-
-
-/* Template Variables */
-
-body {
-    background-color: @background;
-    color: @textcolor;
-}
-#header {
-    background-color: @headerbackground;
-    color: @headertextcolor;
-}
-#header_bar {
-    background-color: @header_bar_background;
-    color: @headertextcolor;
-}
-#footer {
-    background-color: @footerbackground;
-}
-a {
-    color: @linkcolor;
-}
-.nav>li>a {
-    color: @menu_linkcolor;
-}
-.nav>li.active>a {
-    color: @menu_active_linkcolor;
-}
-.nav>li>a:hover {
-    background-color: @menu_hover_backgroundcolor;
-}
-.navbar-default {
-    background-color: @menu_backgroundcolor;
-}
-table {
-    th {
-        color: @table_headertextcolor;
-        background: @table_headerbackgroundcolor;
-        a {
-            color: @table_headerlinkcolor;
-        }
-    }
-    tbody {
-        td {
-            color: @table_textcolor;
-        }
-    }
-    &.table-striped>tbody>tr:nth-child(odd)>td {
-        background-color: @table_oddrow_background_color;
-        color: @table_oddrow_text_color;
-    }
-    &.table-striped>tbody>tr:nth-child(even)>td {
-        background-color: @table_evenrow_background_color;
-        color: @table_evenrow_text_color;
-    }
-}
-
-.btn {
-    border-radius: @button_borderradius;
-    border-size: @button_bordersize;
-}
-.btn-primary {
-    color: @button_textcolor;
-    background-color: @button_backgroundcolor;
-    border-color: @button_bordercolor;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  color: @button_hover_textcolor;
-  background-color: @button_hover_backgroundcolor;
-  border-color: @button_hover_bordercolor;
-}
-
