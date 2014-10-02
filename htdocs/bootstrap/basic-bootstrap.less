@@ -270,17 +270,23 @@ table {
     }
 }
 
+.deleted {
+    color: #888888;
+    font-style: italic;
+    text-decoration: line-through; /* Bug in Firefox: line-through remains on for descending inline elements */
+}
+
 .btn {
     border-radius: @button_borderradius;
     border-size: @button_bordersize;
 }
-.btn-primary {
+.btn-primary, .btn-primary.disabled {
     color: @button_textcolor;
     background-color: @button_backgroundcolor;
     border-color: @button_bordercolor;
 }
 
-.buttons .btn {
+.buttons .btn, .button .btn {
     margin-right: 10px;
 }
 
