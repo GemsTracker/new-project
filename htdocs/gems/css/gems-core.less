@@ -10,14 +10,14 @@ a {
         font-style: normal;
         text-decoration: none;
     }
-    :hover {
+    &:hover {
         text-decoration: underline;
     }
     [href^="mailto:"] {
         background: transparent url(../images/mail.png) no-repeat scroll right center;
         padding-right: 20px;
     }
-    :hover[href^="mailto:"] {
+    &:hover[href^="mailto:"] {
         text-decoration: underline !important;
     }
 
@@ -653,7 +653,7 @@ textarea + p.description {
         z-index: 100;
     }
 
-    hover ul {
+    &:hover ul {
         display: inline;
         max-height: 18.5em;
         left: 0;
