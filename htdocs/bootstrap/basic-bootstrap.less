@@ -4,6 +4,18 @@
 /* Mixins */
 @import '../gems/css/mixins.less';
 
+/* Core */
+@import '../gems/css/gems-core.less';
+
+/* Barcharts */
+@import '../gems/css/barchart.less';
+
+/* Trafficlight */
+@import '../gems/css/trafficlight.less';
+
+/* Printing */
+@import '../gems/css/gems_print.css';
+
 html,
 body {
    margin:0;
@@ -23,8 +35,8 @@ body {
     bottom:0;
     width:100%;
     height:22px;   /* Height of the footer */
-    background: @footer_backgroundcolor;
-    color: @footer_textcolor;
+    background: @footerbackground;
+    color: @footertextcolor;
     a {
         color: @linkcolor;
     }
@@ -267,6 +279,7 @@ table {
     &.table-hover > tbody > tr:hover > td,
     &.table-hover > tbody > tr:hover > th {
       background-color: @table_hover_backgroundcolor;
+      color: @table_hover_text_color;
     }
 }
 
@@ -349,4 +362,11 @@ table {
     td.empty {
         background: transparent url(../gems/icons/empty.png) no-repeat center center;
     }
+}
+
+/* Tab forms */
+form div.tab-pane {
+    border: 1px solid #ddd;
+    padding: .5em;
+    border-top: 0px;
 }
