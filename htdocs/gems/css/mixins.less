@@ -8,15 +8,7 @@
  * special IE compatible inline image using base64encode custom function
  * @see MUtil_Less_View_Helper_HeadLink
  */
-.gradient (@startColor: #eee, @endColor: white) {
-    // Hardcoded for IE, don't use filter because it breaks rounded corners
-    // http://ie.microsoft.com/testdrive/graphics/svggradientbackgroundmaker/default.html
-    // background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc3NzEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNDNUU3RjkiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM2REMzRjEiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c3NzEpIiAvPgo8L3N2Zz4=);
-    @dataPrefix: ~"url(data:image/svg+xml;base64,";
-    @dataSuffix: ~")";
-    @dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop stop-color="@{startColor}" offset="0"/><stop stop-color="@{endColor}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
-    background-image: ~"@{dataPrefix}"+base64encode(@dataContent)+"@{dataSuffix}";
-    
+.gradient (@startColor: #eee, @endColor: white) {   
     background-color: @startColor;
     background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
     background-image: -webkit-linear-gradient(top, @startColor, @endColor);
