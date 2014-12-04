@@ -1,4 +1,7 @@
 /* First load our templates variables */
+
+@import 'less/bootstrap.less';
+
 @import url('variables.less');
 
 /* Mixins */
@@ -37,6 +40,14 @@ body {
     a {
         color: @linkcolor;
     }
+    #version {
+        .make-sm-column(6);
+    }
+
+    #username {
+        .make-sm-column(6);
+        .text-right;
+    }
 }
 
 #header {
@@ -47,12 +58,25 @@ body {
 }
 
 #header_bar {
-    #languages span {
-        font-style: italic;
-        font-weight: bold;
+
+    #organizations {
+        .make-sm-column(3);
     }
-    #login .logout {
-        margin-left: 10px;
+
+    #languages {
+        .make-sm-column(2);
+        span {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
+    #login {
+        .make-sm-column(4);
+        .text-right;
+        .pull-right;
+        .logout {
+            margin-left: 10px;
+        }
     }
 }
 
@@ -378,6 +402,26 @@ a {
 }
 
 table {
+    &.browser.table {
+        // Default bootstrap classes
+        .table-bordered;
+        .table-hover;
+        .table-condensed;
+
+        & > tbody > tr:nth-child(odd) > td {
+            background-color: @table_oddrow_background_color;
+            color: @table_oddrow_text_color;
+        }
+        & > tbody > tr:nth-child(even) > td {
+            background-color: @table_evenrow_background_color;
+            color: @table_evenrow_text_color;
+        }
+        & > tbody > tr:hover > td,
+        & > tbody > tr:hover > th {
+          background-color: @table_hover_backgroundcolor;
+          color: @table_hover_text_color;
+        }
+    }
     th {
         color: @table_headertextcolor;
         background: @table_headerbackgroundcolor;
@@ -389,19 +433,6 @@ table {
         td {
             color: @table_textcolor;
         }
-    }
-    &.table-striped > tbody > tr:nth-child(odd) > td {
-        background-color: @table_oddrow_background_color;
-        color: @table_oddrow_text_color;
-    }
-    &.table-striped > tbody > tr:nth-child(even) > td {
-        background-color: @table_evenrow_background_color;
-        color: @table_evenrow_text_color;
-    }
-    &.table-hover > tbody > tr:hover > td,
-    &.table-hover > tbody > tr:hover > th {
-      background-color: @table_hover_backgroundcolor;
-      color: @table_hover_text_color;
     }
 
     tr[onclick]:hover,
@@ -500,17 +531,73 @@ textarea + p.description {
 }
 
 .btn {
+    // Default size
+    .btn-sm;
+    //.button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+
     border-radius: @button_borderradius;
     border-size: @button_bordersize;
+    padding: @button_borderpadding;
     .icon {
         float: right;
         padding-right: 4px;
     }
-}
-.btn-primary, .btn-primary.disabled {
+    
     color: @button_textcolor;
     background-color: @button_backgroundcolor;
     border-color: @button_bordercolor;
+
+    // Reevaluate custom overwrites of the default value
+    &.btn-default {
+      .btn-default;
+    }
+    &.btn-primary {
+      .btn-primary;
+    }
+    // Success appears as green
+    &.btn-success {
+      .btn-success;
+    }
+    // Info appears as blue-green
+    &.btn-info {
+      .btn-info;
+    }
+    // Warning appears as orange
+    &.btn-warning {
+      .btn-warning;
+    }
+    // Danger and error appear as red
+    &.btn-danger {
+      .btn-danger;
+    }
+
+    &.btn-lg {
+      // line-height: ensure even-numbered height of button next to large input
+      .btn-lg;
+    }
+    &.btn-sm {
+      // line-height: ensure proper height of button next to small input
+      .btn-sm;
+    }
+    &.btn-xs {
+      .btn-xs;  
+    }
+
+    &.disabled {
+        color: @button_textcolor;
+        background-color: @button_backgroundcolor;
+        border-color: @button_bordercolor;
+    }
+
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: @button_hover_textcolor;
+        background-color: @button_hover_backgroundcolor;
+        border-color: @button_hover_bordercolor;
+    }
 }
 
 .buttons .btn, .button .btn {
@@ -537,10 +624,6 @@ span.actionlink {
     clear: both;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: @button_hover_textcolor;
   background-color: @button_hover_backgroundcolor;
@@ -656,6 +739,21 @@ ul.allowed li {
 
 /* forms */
 
+.form-horizontal {
+    .form-group {
+        label, .label-container {
+            .make-sm-column(2);
+        }
+        .element-container {
+            .make-sm-column(10);
+        }
+        .element-container-labelless {
+            .make-sm-column(10);
+            .make-sm-column-offset(2)
+        }
+    }
+}
+
 input {
     &.disabled {
         color: #737373;
@@ -670,9 +768,8 @@ input {
         background: #ebebe4;
     }
     &.token_copy {
-    background-color: #eeeeee;
-}
-
+        background-color: #eeeeee;
+    }
 }
 
 /* Tab forms */
