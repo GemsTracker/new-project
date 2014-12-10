@@ -735,7 +735,7 @@ textarea + p.description {
   position: absolute;
   z-index: 100;
 }
-.toolbox hover ul {
+.toolbox:hover ul {
   display: inline;
   max-height: 18.5em;
   left: 0;
