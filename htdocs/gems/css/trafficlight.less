@@ -3,11 +3,12 @@
 // @brand-primary;
 // @font-size-small;
 // @state-info-text;
-// @brand-secondary-25p;
 // @brand-info;
 // @brand-success;
 // @brand-warning;
-// @brand-danger;        
+// @brand-danger; 
+// @font-size-h3;
+// @headings-color;
 
 //_mixins
 .add-colors-in-zp() {
@@ -62,6 +63,19 @@ div.loading {
 }
 
 .traject {
+    &.panel {
+        border: 0px;
+        border-top: 1px solid @brand-primary;
+        margin-bottom:40px;
+        border-radius: 0;
+        .box-shadow(0 0px 0px rgba(0,0,0,.0));
+        .panel-title {
+            text-transform: uppercase;
+            font-size: @font-size-h3;
+            color: @headings-color;
+        }
+    }
+    
     .panel-heading {
         .cursor-hand();
 
@@ -72,6 +86,10 @@ div.loading {
         .editIcon {
             font-size: 2em;
             margin-top: -1.2em;
+            
+            a {
+                color: @headings-color;
+            }
         }
     }
     .panel-body {
@@ -134,7 +152,6 @@ div.loading {
                 // .drop-shadow();
                 .cursor-hand();
                 div {
-                    background-color: @brand-secondary-25p;
                     padding: 2px;
                     .border-radius(5px);
                     margin-bottom: 11px;
