@@ -28,13 +28,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-include_once('GemsEscort.php');
-include_once('Gems/Project/Layout/SingleLayoutInterface.php');
-include_once('Gems/Project/Log/LogRespondentAccessInterface.php');
-include_once('Gems/Project/Organization/MultiOrganizationInterface.php');
-include_once('Gems/Project/Tracks/MultiTracksInterface.php');
-include_once('Gems/Project/Tracks/StandAloneSurveysInterface.php');
-
 class NewProject_Escort extends GemsEscort implements
     Gems_Project_Layout_SingleLayoutInterface,
     Gems_Project_Log_LogRespondentAccessInterface,
