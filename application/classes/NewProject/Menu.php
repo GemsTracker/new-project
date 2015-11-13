@@ -27,7 +27,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-class NewProject_Menu extends Gems_Menu {
+class NewProject_Menu extends \Gems_Menu {
 
     public function loadProjectMenu()
     {

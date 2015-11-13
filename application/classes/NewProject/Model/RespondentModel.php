@@ -44,7 +44,7 @@
  * @license    New BSD License
  * @since      Class available since version 1.6
  */
-class NewProject_Model_RespondentModel extends Gems_Model_RespondentNlModel
+class NewProject_Model_RespondentModel extends \Gems_Model_RespondentNlModel
 {
     /**
      * Set those settings needed for the detailed display

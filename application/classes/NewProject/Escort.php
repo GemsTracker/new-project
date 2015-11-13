@@ -30,23 +30,10 @@
 
 include_once('GemsEscort.php');
 include_once('Gems/Project/Layout/SingleLayoutInterface.php');
-include_once('Gems/Project/Log/LogRespondentAccessInterface.php');
-include_once('Gems/Project/Organization/MultiOrganizationInterface.php');
 include_once('Gems/Project/Tracks/MultiTracksInterface.php');
-include_once('Gems/Project/Tracks/StandAloneSurveysInterface.php');
 
-class NewProject_Escort extends GemsEscort implements
-    Gems_Project_Layout_SingleLayoutInterface,
-    Gems_Project_Log_LogRespondentAccessInterface,
-    Gems_Project_Organization_MultiOrganizationInterface,
-    Gems_Project_Tracks_MultiTracksInterface,
-    Gems_Project_Tracks_StandAloneSurveysInterface
+class NewProject_Escort extends \GemsEscort implements
+    \Gems_Project_Layout_SingleLayoutInterface
+    \Gems_Project_Tracks_MultiTracksInterface
 {
-    public function getUserOrganization() { // Gems_Project_Organization_MultiOrganizationInterface
-        return $this->session->user_organization_id;
-    }
-
-    public function getAllowedOrganizations($userId = null) { // Gems_Project_Organization_MultiOrganizationInterface
-        return parent::getAllowedOrganizations($userId);
-    }
 }
