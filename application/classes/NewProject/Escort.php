@@ -33,7 +33,7 @@ include_once('Gems/Project/Layout/SingleLayoutInterface.php');
 include_once('Gems/Project/Tracks/MultiTracksInterface.php');
 
 class NewProject_Escort extends \GemsEscort implements
-    \Gems_Project_Layout_SingleLayoutInterface
+    \Gems_Project_Layout_SingleLayoutInterface,
     \Gems_Project_Tracks_MultiTracksInterface
 {
 }
