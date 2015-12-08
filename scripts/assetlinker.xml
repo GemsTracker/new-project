@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="assetlinker" default="assetlink" basedir=".">
+    <target name="assetlink" description="Links specific public assets to the correct directory">
+        <symlink target="${project.basedir}/vendor/gemstracker/gemstracker-template" link="${project.basedir}/htdocs/gems" />
+    </target>
+</project>
