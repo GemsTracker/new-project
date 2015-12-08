@@ -1,0 +1,7 @@
+vendor/
+
+var/auto_import/
+var/cache/
+var/import_failed/
+var/importing/
+var/tmp/
