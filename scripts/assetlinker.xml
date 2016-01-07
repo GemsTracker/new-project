@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="assetlinker" default="assetlink" basedir=".">
     <target name="assetlink" description="Links specific public assets to the correct directory">
-        <symlink target="${project.basedir}/vendor/gemstracker/gemstracker-template" link="${project.basedir}/htdocs/gems" />
+        <if>
+            <os family="windows" />
+            <then>
+                <exec command='mklink /J ${project.basedir}\htdocs\gems ${project.basedir}\vendor\gemstracker\gemstracker-template' escape="false" />   
+            </then>
+        
+            <else>
+                <symlink target="${project.basedir}/vendor/gemstracker/gemstracker-template" link="${project.basedir}/htdocs/gems" />
+            </else>        
+        </if>
+        
     </target>
 </project>
