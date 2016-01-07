@@ -31,6 +31,8 @@
             "email": "mrook@php.net"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.3.9",
         "gemstracker/gemstracker": "dev-master",
@@ -56,6 +58,10 @@
         {
             "type": "git",
             "url": "https://github.com/GemsTracker/gemstracker-template.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/GemsTracker/MUtil.git"
         }
     ]
 }

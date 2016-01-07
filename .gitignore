@@ -7,3 +7,4 @@ var/importing/
 var/tmp/
 nbproject/
 /composer.lock
+/htdocs/gems
