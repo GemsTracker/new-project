@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="setup" default="setup" basedir=".">
+    <target name="properties">
+        <propertyprompt propertyName="project" defaultValue="" promptText="Project name (only lowercase, no spaces)" useExistingValue="true" />
+        <php function="ucfirst" returnProperty="project.uc">
+            <param>${project}</param>
+        </php>
+        <propertyprompt propertyName="projectname" defaultValue="" promptText="Project name to display in GemsTracker" useExistingValue="true" />
+        <propertyprompt propertyName="projectdesc" defaultValue="" promptText="Project description" useExistingValue="true" />
+        <propertyprompt propertyName="projectsalt" defaultValue="" promptText="Salt, can include %s" useExistingValue="true" />
+        <propertyprompt propertyName="dbhost" defaultValue="localhost" promptText="Database location" useExistingValue="true" />
+        <propertyprompt propertyName="dbname" defaultValue="${project}db" promptText="Database naam" useExistingValue="true" />
+        <propertyprompt propertyName="dbuser" defaultValue="${project}u" promptText="Database usernaam" useExistingValue="true" />
+        <propertyprompt propertyName="dbpwd" defaultValue="" promptText="Database wachtwoord" useExistingValue="true" />
+    </target>
+    
+    <adhoc-task name="rename"><![CDATA[
+            class rename extends Task {
+                private $inDir;
+                private $outDir;
+
+                function setInDir($inDir) {
+                    $this->inDir = $inDir;
+                }
+        
+                function setOutDir($outDir) {
+                    $this->outDir = $outDir;
+                }
+
+                function main() {
+                    rename($this->inDir, $this->outDir);
+                }
+            }
+        ]]></adhoc-task>
+    
+    <target name="setup" description="Run initial setup for a new project" depends="properties">
+        <echo msg="Modifying index.php" />
+        <reflexive file="${project.basedir}/htdocs/index.php">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern="newProject" replace="${project}"/>
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+
+        <echo msg="Modifying project specific classes" />
+        <reflexive>
+            <fileset dir="${project.basedir}/application/classes/NewProject">
+                <include pattern="**/*.php"/>
+            </fileset>
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern="NewProject" replace="${project.uc}"/>
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <rename inDir="${project.basedir}/application/classes/NewProject" outDir="${project.basedir}/application/classes/${project.uc}"/>
+
+        <echo msg="Modifying project.ini" />
+        <reflexive file="${project.basedir}/application/configs/project.ini">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern="name\s*=\sGEMS_PROJECT_NAME_UC" replace="name        = '${projectname}'"/>
+                    <regexp pattern="description\s=\sGEMS_PROJECT_NAME_UC" replace="description = '${projectdesc}'"/>
+                    <regexp pattern="salt\s*=.*" replace="salt ='${projectsalt}'"/>
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+
+        <echo msg="Generating db.inc.php" />
+        <reflexive file="${project.basedir}/var/settings/db.inc.php">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern="'HOST',\s*'.*'" replace="'HOST', '${dbhost}'"/>
+                    <regexp pattern="'USER',\s*'.*'" replace="'USER', '${dbuser}'"/>
+                    <regexp pattern="'PASSWD',\s*'.*'" replace="'PASSWD', '${dbpwd}'"/>
+                    <regexp pattern="'DATABASE',\s*'.*'" replace="'DATABASE', '${dbname}'"/>
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+    </target>   
+    
+</project>
