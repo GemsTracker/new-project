@@ -32,4 +32,7 @@ class NewProject_Escort extends \GemsEscort implements
     \Gems_Project_Layout_SingleLayoutInterface,
     \Gems_Project_Tracks_MultiTracksInterface
 {
+    public $useBootstrap = true;
+    
+    public $useHtml5 = true;
 }
