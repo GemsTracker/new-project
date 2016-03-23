@@ -49,15 +49,13 @@ class NewProject_Model_RespondentModel extends \Gems_Model_RespondentNlModel
     /**
      * Set those settings needed for the detailed display
      *
-     * @param mixed $locale The locale for the settings
      * @return \Gems_Model_RespondentModel
-     */
-    public function applyDetailSettings($locale = null)
+     * /
+    public function applyDetailSettings()
     {
-        parent::applyDetailSettings($locale);
+        parent::applyDetailSettings();
 
-        // $translator = $this->translate->getAdapter();
-        // $this->setIfExists('grs_phone_2', 'label', $translator->_('Mobile phone'));
+        // $this->setIfExists('grs_phone_2', 'label', $this->_('Mobile phone'));
 
         return $this;
     }
@@ -65,12 +63,12 @@ class NewProject_Model_RespondentModel extends \Gems_Model_RespondentNlModel
     /**
      * Set those values needed for editing
      *
-     * @param mixed $locale The locale for the settings
+     * @param boolean $create True when creating
      * @return \Gems_Model_RespondentModel
      * /
-    public function applyEditSettings($locale = null)
+    public function applyEditSettings($create = false)
     {
-        parent::applyEditSettings($locale);
+        parent::applyEditSettings($create);
 
         return $this;
     } // */
