@@ -15,6 +15,11 @@
 
 /* Printing */
 @import '../gems/css/gems_print.css';
+@media print {
+    a[href]:after {
+        content: "";     /* Reset bootstrap extra info */
+    }
+}
 
 html,
 body {
