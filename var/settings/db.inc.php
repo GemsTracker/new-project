@@ -14,9 +14,3 @@ define ('DATABASE', 'new_project');
 // define('APPLICATION_ENV', 'development');
 // define('GEMS_LIBRARY_DIR', 'D:\\Dev\\ErasmusMC\\gemstracker\\library');
 // define('ZEND_LIBRARY_DIR', 'D:\\Dev\\php_lib');
-
-/*
-$zendx = 'C:\\Program Files (x86)\\Zend\\ZendServer\\share\\ZendFramework\\extras\\library';
-if (file_exists($zendx)) {
-    set_include_path($zendx . PATH_SEPARATOR . get_include_path());
-} // */

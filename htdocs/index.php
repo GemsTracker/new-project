@@ -88,6 +88,9 @@ defined('MUTIL_LIBRARY_DIR') || define('MUTIL_LIBRARY_DIR', realpath(VENDOR_DIR 
  */
 date_default_timezone_set(GEMS_TIMEZONE);
 
+// set_include_path('.');
+// ini_set('error_log', GEMS_ROOT_DIR . '/var/logs/php_errors.log');
+
 /**
  * Start standard GEMS bootstrap.
  */
