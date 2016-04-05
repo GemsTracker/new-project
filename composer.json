@@ -37,6 +37,7 @@
         "php": ">=5.3.9",
         "gemstracker/gemstracker": "dev-master",
         "gemstracker/gemstracker-template": "dev-master",
+        "gemstracker/gemstracker-responsive-template": "dev-master",
         "phing/phing": "^2.11"
     },
     "require-dev": {
@@ -59,6 +60,10 @@
         {
             "type": "git",
             "url": "https://github.com/GemsTracker/gemstracker-template.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/GemsTracker/gemstracker-responsive-template.git"
         },
         {
             "type": "git",

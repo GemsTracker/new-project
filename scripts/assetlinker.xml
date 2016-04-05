@@ -5,10 +5,12 @@
             <os family="windows" />
             <then>
                 <exec command='mklink /J ${project.basedir}\htdocs\gems ${project.basedir}\vendor\gemstracker\gemstracker-template' escape="false" />   
+                <exec command='mklink /J ${project.basedir}\htdocs\gems-responsive ${project.basedir}\vendor\gemstracker\gemstracker-responsive-template' escape="false" />   
             </then>
         
             <else>
                 <symlink target="${project.basedir}/vendor/gemstracker/gemstracker-template" link="${project.basedir}/htdocs/gems" />
+                <symlink target="${project.basedir}/vendor/gemstracker/gemstracker-responsive-template" link="${project.basedir}/htdocs/gems-responsive" />
             </else>        
         </if>
         
