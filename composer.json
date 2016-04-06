@@ -35,9 +35,9 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.3.9",
-        "gemstracker/gemstracker": "dev-master",
-        "gemstracker/gemstracker-template": "dev-master",
-        "gemstracker/gemstracker-responsive-template": "dev-master",
+        "gemstracker/gemstracker": "1.7.2",
+        "gemstracker/gemstracker-template": "1.7.2",
+        "gemstracker/gemstracker-responsive-template": "1.7.2",
         "phing/phing": "^2.11"
     },
     "require-dev": {
@@ -51,7 +51,9 @@
             "php vendor/phing/phing/bin/phing.php -f scripts/setup.xml"
         ]
     },
-
+    "config": {
+        "use-include-path": true
+    },
     "repositories": [
         {
             "type": "git",
