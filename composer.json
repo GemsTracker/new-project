@@ -1,6 +1,5 @@
 {
     "name": "gemstracker/new-project",
-    "version": "1.7.1",
     "license": "BSD-3-Clause",
     "type": "project",
     "description": "New project files for Gemstracker",
