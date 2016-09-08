@@ -19,7 +19,7 @@
  *
  * I.e. the directory where index.php is stored.
  */
-define('GEMS_WEB_DIR', dirname(__FILE__));
+define('GEMS_WEB_DIR', __DIR__);
 define('GEMS_ROOT_DIR', realpath(GEMS_WEB_DIR . '/../'));
 
 // Internal pretty project name - no spaces etc., will be used for tags and IDs!

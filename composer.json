@@ -4,6 +4,14 @@
     "type": "project",
     "description": "New project files for Gemstracker",
     "homepage": "http://gemstracker.org/",
+    "autoload": {
+        "psr-0": {
+            "NewProject_": "application/classes"
+        },
+        "psr-4": {
+            "NewProject\\": "application/classes/NewProject"
+        }
+    },
     "authors": [
         {
             "name": "Matijs de Jong",
@@ -24,10 +32,6 @@
         {
             "name": "Roel Faber",
             "email": "r.faber@erasmusmc.nl"
-        },
-        {
-            "name": "Michiel Rook",
-            "email": "mrook@php.net"
         }
     ],
     "minimum-stability": "dev",

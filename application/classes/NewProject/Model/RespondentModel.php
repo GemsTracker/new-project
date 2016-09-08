@@ -10,7 +10,17 @@
  * @copyright  Copyright (c) 2016 Project
  * @license    No free license, do not copy
  */
-class NewProject_Model_RespondentModel extends \Gems_Model_RespondentNlModel
+
+namespace NewProject\Model;
+
+/**
+ *
+ * @package    NewProject
+ * @subpackage Model
+ * @copyright  Copyright (c) 2016 Project
+ * @license    No free license, do not copy
+ */
+class RespondentModel extends \Gems_Model_RespondentNlModel
 {
    /**
      * Set those settings needed for the browse display

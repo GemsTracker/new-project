@@ -12,7 +12,17 @@
  * @copyright  Copyright (c) 2016 Reward
  * @license    No free license, do not copy
  */
-class NewProject_Escort extends \GemsEscort implements
+
+namespace NewProject;
+
+/**
+ *
+ * @package    NewProject
+ * @subpackage Escort
+ * @copyright  Copyright (c) 2016 Reward
+ * @license    No free license, do not copy
+ */
+class Escort extends \GemsEscort implements
     \Gems_Project_Layout_SingleLayoutInterface,
     // \Gems_Project_Layout_MultiLayoutInterface,
     \Gems_Project_Tracks_MultiTracksInterface

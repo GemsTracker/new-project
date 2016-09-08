@@ -10,7 +10,17 @@
  * @copyright  Copyright (c) 2016 Project
  * @license    No free license, do not copy
  */
-class NewProject_Menu extends \Gems_Menu {
+
+namespace NewProject;
+
+/**
+ *
+ * @package    NewProject
+ * @subpackage Menu
+ * @copyright  Copyright (c) 2016 Project
+ * @license    No free license, do not copy
+ */
+class Menu extends \Gems_Menu {
 
     public function loadProjectMenu()
     {
