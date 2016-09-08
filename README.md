@@ -10,3 +10,13 @@ To install the new-project, download a zip of the [latest release](https://githu
 ```bash
 $ composer install --no-dev
 ```
+
+At the moment the setup script will not run as a post-install step using composer because it needs user input. We will fix that in the future, but for now you need to manually run the setup script to tell how you would like to name your project and how to connect to the database.
+
+```bash
+$ vendor/bin/phing -f scripts/setup.xml
+```
+
+If you have not already done so, you should now create an empty database and give access to the user script you provided. When running the software (by going to htdocs/index.php) you can login the application using the username and password `superadmin`.
+
+From this point on you can develop your own modules or make changes to the configuration files in `application/configs/project.ini`

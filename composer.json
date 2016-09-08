@@ -46,8 +46,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php vendor/phing/phing/bin/phing.php -f scripts/assetlinker.xml",
-            "php vendor/phing/phing/bin/phing.php -f scripts/setup.xml"
+            "php vendor/phing/phing/bin/phing.php -f scripts/assetlinker.xml"
         ]
     },
     "config": {
