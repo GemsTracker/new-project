@@ -20,7 +20,7 @@
  * I.e. the directory where index.php is stored.
  */
 define('GEMS_WEB_DIR', __DIR__);
-define('GEMS_ROOT_DIR', realpath(GEMS_WEB_DIR . '/../'));
+define('GEMS_ROOT_DIR', dirname(GEMS_WEB_DIR));
 
 // Internal pretty project name - no spaces etc., will be used for tags and IDs!
 // @TODO: Set project name
@@ -50,10 +50,10 @@ if (! defined('APPLICATION_ENV')) {
     define('APPLICATION_ENV', $env);
 }
 
+// Default values, required in index.php
 defined('GEMS_TIMEZONE') || define('GEMS_TIMEZONE', 'Europe/Amsterdam');
-defined('VENDOR_DIR') || define('VENDOR_DIR', realpath(GEMS_ROOT_DIR . '/vendor/'));
-defined('GEMS_LIBRARY_DIR') || define('GEMS_LIBRARY_DIR', realpath(VENDOR_DIR . '/gemstracker/gemstracker'));
-defined('MUTIL_LIBRARY_DIR') || define('MUTIL_LIBRARY_DIR', realpath(VENDOR_DIR . '/magnafacta/mutil/src'));
+defined('VENDOR_DIR') || define('VENDOR_DIR', GEMS_ROOT_DIR . '/vendor/');
+defined('GEMS_LIBRARY_DIR') || define('GEMS_LIBRARY_DIR', VENDOR_DIR . '/gemstracker/gemstracker');
 
 /**
  * Always set the system timezone!
