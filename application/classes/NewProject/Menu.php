@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Default Gemstracker project Menu class
+ * Default GemsTracker project Menu class
  *
  * Normal practice is to change all NewProject references to the project name
  *

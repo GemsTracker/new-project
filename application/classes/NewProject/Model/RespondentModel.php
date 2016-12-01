@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Default Gemstracker project Respondent Model
+ * Default GemsTracker project Respondent Model
  *
  * Normal practice is to change all NewProject references to the project name
  *

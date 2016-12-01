@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Default Gemstracker project Escort class
+ * Default GemsTracker project Escort class
  *
  * This is the class that is started for every execution
  *
@@ -9,7 +9,7 @@
  *
  * @package    NewProject
  * @subpackage Escort
- * @copyright  Copyright (c) 2016 Reward
+ * @copyright  Copyright (c) 2016 Project
  * @license    No free license, do not copy
  */
 
@@ -19,7 +19,7 @@ namespace NewProject;
  *
  * @package    NewProject
  * @subpackage Escort
- * @copyright  Copyright (c) 2016 Reward
+ * @copyright  Copyright (c) 2016 Project
  * @license    No free license, do not copy
  */
 class Escort extends \GemsEscort implements

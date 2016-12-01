@@ -3,12 +3,11 @@
 /**
  *
  *
- * @package    Friesland
+ * @package    NewProject
  * @subpackage User
  * @author     Matijs de Jong <mjong@magnafacta.nl>
- * @copyright  Copyright (c) 2015 Equipe Zorgbedrijven BV
+ * @copyright  Copyright (c) 2015 Project
  * @license    Not licensed, do not copy
- * @version    $Id: UserLoader.php 2430 2015-02-18 15:26:24Z matijsdejong $
  */
 
 namespace NewProject\User;
@@ -16,9 +15,9 @@ namespace NewProject\User;
 /**
  *
  *
- * @package    Friesland
+ * @package    NewProject
  * @subpackage User
- * @copyright  Copyright (c) 2015 Equipe Zorgbedrijven BV
+ * @copyright  Copyright (c) 2015 Project
  * @license    Not licensed, do not copy
  * @since      Class available since version 1.7.2 Mar 14, 2016 4:03:49 PM
  */
