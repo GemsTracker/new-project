@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZSD EN\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-03 10:46+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Menno Dekker <menno.dekker@erasmusmc.nl>\n"
+"Language-Team: Erasmus MGZ <menno.dekker@erasmusmc.nl>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-KeywordsList: plural:1,2\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-SearchPath-0: application\n"
+
+#: C:\Documents and Settings\175780\My
+#: Documents\NetBeansProjects\zsd\trunk\application\classes\Zsd\Menu.php:15
+msgid "Overzicht"
+msgstr "Overview"
