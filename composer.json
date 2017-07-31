@@ -38,9 +38,9 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.3.9",
-        "gemstracker/gemstracker": "dev-master",
-        "gemstracker/gemstracker-template": "dev-master",
-        "gemstracker/gemstracker-responsive-template": "dev-master",
+        "gemstracker/gemstracker": "~1.8.2",
+        "gemstracker/gemstracker-template": "~1.8.2",
+        "gemstracker/gemstracker-responsive-template": "~1.8.2",
         "phing/phing": "^2.11"
     },
     "require-dev": {
