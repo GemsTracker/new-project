@@ -28,7 +28,16 @@ class Escort extends \GemsEscort implements
     \Gems_Project_Tracks_MultiTracksInterface
     // \Gems_Project_Tracks_SingleTrackInterface
 {
+    /**
+     * Set to true for bootstrap projects. Needs html5 set to true as well
+     * @var boolean
+     */
     public $useBootstrap = true;
 
+    /**
+     * Set to true for html 5 projects
+     *
+     * @var boolean
+     */
     public $useHtml5 = true;
 }
