@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<project name="Gems SQL Creation Scripts" default="build">
+
+    <fileset id="sql-creation-scripts" dir="..">
+		<include name="application/configs/db/tables/*.sql"/>
+        <include name="vendor/gemstracker/gemstracker/configs/db/tables/*.sql"/>
+        <include name="vendor/gemstracker/gemstracker/configs/db_response_data/tables/*.sql"/>
+    </fileset>
+
+    <!-- Merge SQL creation scripts -->
+	<target name="sql-merge">
+        <mkdir dir="../test/data/sqllite"/>
+        <delete file="../test/data/sqllite/create-all.sql"/>
+        <append destFile="../test/data/sqllite/create-all.sql">
+            <fileset refid="sql-creation-scripts"/>
+            <filterchain>
+                <iconvfilter inputencoding="ISO-8859-1" outputencoding="UTF-8" />
+                <replaceregexp>
+                    <!-- MySQL Workbench does not know the BOOLEAN type -->
+                    <regexp pattern="(\s)BOOLEAN(\s)" replace="\1TINYINT(1)\2" ignoreCase="true"/>
+                </replaceregexp>
+            </filterchain>
+        </append>
+    </target>
+
+    <!-- Merge SQL creation scripts -->
+	<target name="sql-lite">
+        <mkdir dir="../test/data/sqllite/"/>
+        <delete file="../test/data/sqllite/create-lite.sql"/>
+        <append destFile="../test/data/sqllite/create-lite.sql">
+            <fileset refid="sql-creation-scripts"/>
+            <filterchain>
+                <replaceregexp>
+                    <!-- MySQL Workbench does not know the BOOLEAN type -->
+                    <regexp pattern="\`([^\`]*)\`" replace='"\1"' ignoreCase="false"/>
+                    <!-- IF NOT EXISTS statements needed for GT files overruled by project -->
+                    <!-- regexp pattern="CREATE\s+TABLE\s+if\s+not\s+exists\s+" replace="CREATE TABLE " ignoreCase="true"/ -->
+                    <regexp pattern="AUTO_INCREMENT\s*=\s*\d+\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="AUTO_INCREMENT" replace="AUTOINCREMENT" ignoreCase="true"/>
+					<regexp pattern="AUTOINCREMENT" replace="" ignoreCase="true"/>
+                    <regexp pattern="(\sUNIQUE)\s+KEY(\s+|,|\()" replace="\1\2" ignoreCase="true"/>
+                    <regexp pattern="(\sUNIQUE\s)\s*[^\s(]+\s+\(" replace="\1(" ignoreCase="true"/>
+                    <regexp pattern=",\s*(INDEX|KEY)\s*\([^)]+\)" replace="" ignoreCase="true"/>
+                    <regexp pattern=",\s*(INDEX|KEY)\s+\w+\s*\([^)]+\)" replace="" ignoreCase="true"/>
+					<regexp pattern=",\s*[^PRIMARY]\sKEY\s*\([^)]+\)" replace="" multiline="true" ignoreCase="true"/>
+					<regexp pattern="/\*.*\*/" replace="" multiline="true" ignoreCase="true"/>
+                    <regexp pattern="(\s)BIGINT(\s)" replace="\1INTEGER\2" ignoreCase="true"/>  <!-- For primary key auto number -->
+                    <regexp pattern="(\s)BOOLEAN(\s)" replace="\1TINYINT(1)\2" ignoreCase="true"/>
+                    <regexp pattern="ENGINE=[^\s,;]+\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="DEFAULT\s+CHARSET\s*=\s*[^\s,;]+\s+COLLATE\s*=\s*[^\s,;]+" replace="" ignoreCase="true"/>
+                    <regexp pattern="DEFAULT\s+CHARACTER\s+SET\s*" replace="CHARACTER SET " ignoreCase="true"/>
+                    <regexp pattern="DEFAULT\s+CHARSET\s*" replace="CHARACTER SET " ignoreCase="true"/>
+                    <regexp pattern="CHARACTER\s+SET\s*[^\s,;]+\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="CHARSET\s+[^\s,;]+\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="COLLATE\s*[^\s,;]+\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="\sENUM(\s|\()[^)]+\)\s*" replace=" VARCHAR(100) " ignoreCase="true"/>
+                    <regexp pattern="SET\s?\([^)]+\)\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="UNSIGNED\s*" replace="" ignoreCase="true"/>
+                    <regexp pattern="(\s)(DATETIME|DATE|TIMESTAMP)(\s|,)" replace="\1TEXT\3" ignoreCase="true"/>
+                    <regexp pattern="\s+DEFAULT\s+NULL(\s+|,)" replace="\1" ignoreCase="true"/>
+                    <regexp pattern="(?:(\s+NOT\s+NULL)|\s+NULL)([\s,])" replace="\1\2" ignoreCase="true"/>
+                    <regexp pattern="\s+ON\s+UPDATE\s+CURRENT_TIMESTAMP" replace="" ignoreCase="true"/>
+                    <regexp pattern="\s+REFERENCES\s+[^\s]+\s+\([^)]+\)\s*" replace="" ignoreCase="true"/>
+                    <!-- regexp pattern="\s+REFERENCES\s+[^\s,]+\s*" replace="" ignoreCase="true"/ -->
+                </replaceregexp>
+            </filterchain>
+        </append>
+    </target>
+
+<target name="striplicense">
+        <reflexive>
+            <fileset dir=".." id="phpfiles">
+                <include name="**/*.php" />
+                <exclude name="vendor/**" />
+            </fileset>
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern="\s*\*\s*Copyright.*POSSIBILITY OF SUCH DAMAGE\..*?\n.*?(\n)" replace="\1" multiline="true"/>
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+    </target>
+
+	<!-- Main target -->
+	<target name="build" depends="sql-merge,sql-lite"/>
+</project>
