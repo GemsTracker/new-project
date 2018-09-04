@@ -1,4 +1,3 @@
-![Logo](./assets/logo.jpg "GemsTracker")
 # GemsTracker
 
 GemsTracker (**GE**neric **M**edical **S**urvey **Tracker**) is a software package developed for distribution of questionnaires and forms during clinical research and quality registrations in healthcare. The software allows you to easily set up your own website for data collection. On a GemsTracker site different users are able to submit, view and send information. GemsTracker offers:
@@ -11,4 +10,4 @@ GemsTracker (**GE**neric **M**edical **S**urvey **Tracker**) is a software packa
 - Elaborate rights management
 - Extensive security and logging possibilities
 
-GemsTracker is developed at Erasmus MC, Rotterdam in collaboration with several partners and is released under the  [New BSD License](https://github.com/GemsTracker/gemstracker-library/blob/master/LICENSE.txt)
+GemsTracker is developed at Erasmus MC, Rotterdam in collaboration with several partners and is released under the [New BSD License](https://github.com/GemsTracker/gemstracker-library/blob/master/LICENSE.txt)
