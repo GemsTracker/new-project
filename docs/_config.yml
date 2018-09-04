@@ -4,5 +4,5 @@ plugins:
 remote_theme: chromatical/jekyll-materialdocs
 
 #https://github.com/chromatical/jekyll-materialdocs/
-menu: GemsTracker
+title: GemsTracker
 logo: ./assets/logo.jpg
