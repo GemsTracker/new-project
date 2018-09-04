@@ -1,6 +1,6 @@
 # Introduction
 ## Core concepts
-GemsTracker was developed to improve research in healthcare. It allowes anonymous access for researchers to collected data while still allowing a doctor to see the the individual patient's responses and provide feedback to te patient if needed. Strong points are the scheduling of measurements for individuals, and keeping track of the overall status. It is sometimes referred to as the system taking care of the logistical challenges in research.
+GemsTracker was developed to improve research in healthcare. It allowes anonymous access for researchers to collected data while still allowing a doctor to see the the individual patient's responses and provide feedback to the patient if needed. Strong points are the scheduling of measurements for individuals, and keeping track of the overall status. It is sometimes referred to as the system taking care of the logistical challenges in research.
 
 To get a headstart developing your own measurement track it is advised to read at least about the names we use to address core concepts.
 ### Track
@@ -14,4 +14,3 @@ This is less flexible if you want to add or leave out one survey at a certain fo
 ### Round group
 The round group is the moment in time where multiple measurements take place. It is sometimes referred to as a visit, event of follow-up moment.
 ### Round
-The round is 
