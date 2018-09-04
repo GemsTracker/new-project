@@ -1,0 +1,5 @@
+site_name: GemsTracker Documentation
+repo_url: https://github.com/GemsTracker/new-project
+edit_uri: edit/master/docs/
+
+theme: readthedocs
