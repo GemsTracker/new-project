@@ -6,3 +6,4 @@ remote_theme: chromatical/jekyll-materialdocs
 #https://github.com/chromatical/jekyll-materialdocs/
 title: GemsTracker
 logo: ./assets/logo.jpg
+copyright: GemsTracker
