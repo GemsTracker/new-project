@@ -1,3 +1,7 @@
+---
+menu: false
+title: Home
+---
 # GemsTracker
 
 GemsTracker (**GE**neric **M**edical **S**urvey **Tracker**) is a software package developed for distribution of questionnaires and forms during clinical research and quality registrations in healthcare. The software allows you to easily set up your own website for data collection. On a GemsTracker site different users are able to submit, view and send information. GemsTracker offers:
