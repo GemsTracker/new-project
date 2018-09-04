@@ -4,6 +4,6 @@ plugins:
 remote_theme: chromatical/jekyll-materialdocs
 
 #https://github.com/chromatical/jekyll-materialdocs/
-title: GemsTracker
+title: Documention
 logo: ./assets/logo.jpg
 copyright: GemsTracker
