@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /ask/index
+Disallow: /ask
+Disallow: /index/resetpassword
+Disallow: /language
+Disallow: /ls
