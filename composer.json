@@ -37,10 +37,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=5.3.9",
-        "gemstracker/gemstracker": "dev-master",
+        "php": ">=7.0",
+        "gemstracker/gemstracker": "dev-expressive",
+        "gemstracker/api": "dev-expressive",
         "gemstracker/gemstracker-template": "dev-master",
         "gemstracker/gemstracker-responsive-template": "dev-master",
+        "oomphinc/composer-installers-extender": "^1.1",
         "phing/phing": "^2.11"
     },
     "require-dev": {
@@ -56,11 +58,14 @@
     "config": {
         "use-include-path": true
     },
+    "extra": {
+        "installer-types": ["library"],
+        "installer-paths": {
+            "htdocs/gems-responsive": ["gemstracker/gemstracker-responsive-template"],
+            "htdocs/gems": ["gemstracker/gemstracker-template"]
+        }
+    },
     "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/GemsTracker/gemstracker-library.git"
-        },
         {
             "type": "git",
             "url": "https://github.com/GemsTracker/gemstracker-template.git"
@@ -71,7 +76,19 @@
         },
         {
             "type": "git",
-            "url": "https://github.com/GemsTracker/MUtil.git"
+            "url": "https://github.com/GemsTracker/api.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MagnaFacta/zalt-loader.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MagnaFacta/zalt-model.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MagnaFacta/zalt-soap.git"
         }
     ]
 }

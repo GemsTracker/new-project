@@ -8,3 +8,4 @@ var/tmp/
 nbproject/
 /composer.lock
 /htdocs/gems
+/htdocs/gems-responsive
