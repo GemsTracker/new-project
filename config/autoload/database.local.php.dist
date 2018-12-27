@@ -1,0 +1,28 @@
+<?php
+
+use Gems\Rest\Legacy\LegacyZendDatabaseFactory;
+use Zend_Db as Db;
+use Zend\Db\Adapter\Adapter;
+use Zend\Db\Adapter\AdapterServiceFactory;
+
+return [
+    'db' => [
+        'driver'    => 'Mysqli',
+        'host'      => 'localhost',
+        'username'  => '',
+        'password'  => '',
+        'database'  => '',
+        'charset'   => 'utf8',
+    ],
+    'dependencies' => [
+        'aliases' => [
+            'db' => Adapter::class,
+            'LegacyDb' => Db::class,
+            'LegacyDb2' => Adapter::class,
+        ],
+        'factories' => [
+            Adapter::class => AdapterServiceFactory::class,
+            Db::class => LegacyZendDatabaseFactory::class,
+        ],
+    ]
+];

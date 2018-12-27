@@ -1,0 +1,17 @@
+<?php
+
+return [
+    'gems_auth' => [
+        'use_linked_gemstracker_session' => true,
+        'linked_gemstracker' => [
+            'project_name' => 'newProject',
+            'root_dir' => '/vagrant/gemsrest',
+            'application_env' => 'testing',
+            'cookie_path' => '/',
+        ],
+        'allow_origin_domains' => [
+            'https://newproject.test',
+        ],
+        'requested_width_check' => true,
+    ],
+];
