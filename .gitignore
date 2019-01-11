@@ -10,3 +10,5 @@ nbproject/
 /htdocs/gems
 /htdocs/gems-responsive
 /htdocs/project.css
+/test/reports/
+/var/logs/errors.log
