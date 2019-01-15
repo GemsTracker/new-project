@@ -1,3 +1,90 @@
-Hello!
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if title is defined %}{{ title }}{% endif %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
+        <link href="/favicon.ico?1.8.5" rel="shortcut icon" type="image/x-icon" >
+        <link href="https://gt2.test/project.css?1.8.5" media="all" rel="stylesheet" type="text/css" >
+    </head>
+    <body>
+        <div id="container" class="container-fluid">
+            <header>
+                <div class="logo"></div>
+                <div class="description">
 
-{{ content|raw }}
+                </div>
+                <div class="tools">
+                    <div class="login-status">
+                        {% if login_status is defined %}
+                            {{ login_status }}
+                        {% endif %}
+                    </div>
+                    <div class="language-select">
+                        {% if language is defined %}
+                            {{ language }}
+                        {% endif %}
+                    </div>
+                    <div class="organization-switcher">
+                        {% if organization is defined %}
+                            {{ organization }}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="main-menu">
+
+                </div>
+                <div id="menu-toggle"><i class="fa fa-bars fa-2x"></i></div>
+                <div id="menu-collapse" class="hidden">
+
+                </div>
+                <div id="menu-collapse-backdrop" class="hidden"></div>
+            </header>
+            <div class="content">
+                {% if (navigation is defined or menuHtml is defined or subnav is defined) %}
+                <div id="main-container" class="include-menu">
+                {% else %}
+                <div id="main-container">
+                {% endif %}
+                    <div id="main" class="container-fluid">
+                        {{ content|raw }}
+                    </div>
+                </div>
+                {% if (navigation is defined or menuHtml is defined or subnav is defined) %}
+                <div id="menu" role="navigation">
+                    {% if navigation is defined %}
+                    {{ navigation|raw }}
+                    {% endif %}
+                </div>
+                {% endif %}
+                </div>
+
+                <footer>
+                    {% if footer is defined %}
+                        {{ footer }}
+                    {% endif %}
+                </footer>
+            </div>
+
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/gems/js/tableRowKeySelector.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://gt2.test/gems/js/autoSubmitForm.js"></script>
+        <script type="text/javascript">
+            //<!--
+            e = document.getElementById('search');
+            if (e) {
+                e.focus();
+                try {
+                    if (e.select) {
+                        e.select();
+                    }
+                } catch (ex) {}
+            }    //-->
+        </script>
+    </body>
+</html>
