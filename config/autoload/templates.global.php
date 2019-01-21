@@ -24,7 +24,8 @@ return [
 
     'twig' => [
         'cache_dir'      => 'data/cache/twig',
-        'assets_url'     => '/',
+        'assets_url'     => '/', 
+        'assets_url'     => '/expressive/htdocs/', // Find a solution to use the basepath
         'assets_version' => null,
         'extensions'     => [
             // extension service names or instances

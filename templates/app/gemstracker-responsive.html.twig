@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% if title is defined %}{{ title }}{% endif %}</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
-        <link href="/favicon.ico?1.8.5" rel="shortcut icon" type="image/x-icon" >
-        <link href="https://gt2.test/project.css?1.8.5" media="all" rel="stylesheet" type="text/css" >
+        <link href="{{ asset('favicon.ico?1.8.5') }}" rel="shortcut icon" type="image/x-icon" >
+        <link href="{{ asset('project.css?1.8.5') }}" media="all" rel="stylesheet" type="text/css" >
     </head>
     <body>
         <div id="container" class="container-fluid">
@@ -34,16 +34,20 @@
                 </div>
 
                 <div class="main-menu">
-
+                    {% if topMenu is defined %}
+                        {{ topMenu|raw }}
+                    {% endif %}
                 </div>
                 <div id="menu-toggle"><i class="fa fa-bars fa-2x"></i></div>
                 <div id="menu-collapse" class="hidden">
-
+                    {% if menuHtml is defined %}
+                        {{ menuHtml|raw }}
+                    {% endif %}
                 </div>
                 <div id="menu-collapse-backdrop" class="hidden"></div>
             </header>
             <div class="content">
-                {% if (navigation is defined or menuHtml is defined or subnav is defined) %}
+                {% if (navigation is defined) or (menuHtml is defined) or (subnav is defined) %}
                 <div id="main-container" class="include-menu">
                 {% else %}
                 <div id="main-container">
@@ -52,10 +56,16 @@
                         {{ content|raw }}
                     </div>
                 </div>
-                {% if (navigation is defined or menuHtml is defined or subnav is defined) %}
+                {% if (navigation is defined) or (menuHtml is defined) or (subnav is defined) %}
                 <div id="menu" role="navigation">
                     {% if navigation is defined %}
                     {{ navigation|raw }}
+                    {% endif %}
+                    {% if subnav is defined %}
+                    {{ subnav|raw }}
+                    {% endif %}
+                    {% if menuHtml is defined %}
+                    {{ menuHtml|raw }}
                     {% endif %}
                 </div>
                 {% endif %}
@@ -71,9 +81,9 @@
         </div>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/gems/js/tableRowKeySelector.js"></script>
+        <script type="text/javascript" src="{{ asset('gems/js/tableRowKeySelector.js') }}"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://gt2.test/gems/js/autoSubmitForm.js"></script>
+        <script type="text/javascript" src="{{ asset('gems/js/autoSubmitForm.js') }}"></script>
         <script type="text/javascript">
             //<!--
             e = document.getElementById('search');
