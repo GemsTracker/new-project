@@ -30,7 +30,7 @@ define('GEMS_PROJECT_NAME', 'newProject');
  * Load database login variables and optional local variables
  */
 require realpath(GEMS_ROOT_DIR . '/var/settings/db.inc.php');
-
+defined('DBPORT') || define('DBPORT', 3306);
 
 /**
  * Define application environment

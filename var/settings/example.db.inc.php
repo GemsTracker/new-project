@@ -4,6 +4,7 @@
 // @TODO: Replace with your own variable
 //-------------------------------------------------------------------------------------------------
 define ('HOST', 'localhost');
+// define ('DBPORT', 3306);
 define ('USER', 'new_project');
 define ('PASSWD', 'yourpassword');
 define ('DATABASE', 'new_project');
