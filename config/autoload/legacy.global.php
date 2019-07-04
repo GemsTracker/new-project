@@ -6,7 +6,10 @@ use Gems\Rest\Factory\ReflectionFactory;
 defined('VENDOR_DIR') || define('VENDOR_DIR', GEMS_ROOT_DIR . '/vendor/');
 defined('GEMS_LIBRARY_DIR') || define('GEMS_LIBRARY_DIR', VENDOR_DIR . '/gemstracker/gemstracker');
 defined('MUTIL_LIBRARY_DIR') || define('MUTIL_LIBRARY_DIR', realpath(VENDOR_DIR . '/magnafacta/mutil/src'));
-defined('APPLICATION_PATH') || define('APPLICATION_PATH', GEMS_ROOT_DIR . '/src/App');
+defined('APPLICATION_PATH') || define('APPLICATION_PATH', GEMS_ROOT_DIR . '/application');
+
+defined('APPLICATION_ENCODING') || define('APPLICATION_ENCODING', 'UTF-8');
+mb_internal_encoding(APPLICATION_ENCODING);
 
 defined('GEMS_PROJECT_NAME') || define('GEMS_PROJECT_NAME', 'newProject');
 defined('GEMS_PROJECT_NAME_UC') || define('GEMS_PROJECT_NAME_UC', ucfirst(GEMS_PROJECT_NAME));
@@ -24,6 +27,7 @@ return [
             Gems_Agenda::class => LegacyFactory::class,
             Gems_Menu::class => LegacyFactory::class,
             Gems_Model::class => LegacyFactory::class,
+            'LegacyCurrentOrganization' => LegacyFactory::class,
             'LegacyCurrentUser' => LegacyFactory::class,
             Zend_Acl::class => LegacyFactory::class,
             Zend_Locale::class => LegacyFactory::class,
@@ -40,7 +44,7 @@ return [
             'LegacyLoader' => Gems_Loader::class,
             'LegacyProject' => Gems_Project_ProjectSettings::class,
             'LegacyUtil' => Gems_Util::class,
-            'LegacyAccessLog' => Gems_AccessLog::class,
+            'LegacyAccesslog' => Gems_AccessLog::class,
             'LegacyAcl' => Zend_Acl::class,
             'LegacyAgenda' => Gems_Agenda::class,
             'LegacyBasepath' => Gems_Util_BasePath::class,
