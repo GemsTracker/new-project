@@ -39,7 +39,7 @@
     "require": {
         "php": ">=7.0",
         "gemstracker/gemstracker": "dev-expressive2",
-        "gemstracker/api": "dev-master",
+        "gemstracker/api": "dev-expressive",
         "gemstracker/gemstracker-template": "dev-master",
         "gemstracker/gemstracker-responsive-template": "dev-master",
         "oomphinc/composer-installers-extender": "^1.1",
