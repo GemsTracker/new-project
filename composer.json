@@ -38,7 +38,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0",
-        "gemstracker/gemstracker": "dev-expressive",
+        "gemstracker/gemstracker": "dev-expressive2",
         "gemstracker/api": "dev-master",
         "gemstracker/gemstracker-template": "dev-master",
         "gemstracker/gemstracker-responsive-template": "dev-master",
