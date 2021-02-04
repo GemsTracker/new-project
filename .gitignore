@@ -1,10 +1,10 @@
-vendor/
-
+.idea
+composer.lock
+htdocs/gems
+htdocs/gems-responsive
 var/auto_import/
 var/cache/
 var/import_failed/
 var/importing/
 var/tmp/
-nbproject/
-/composer.lock
-/htdocs/gems
+vendor/
