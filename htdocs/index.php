@@ -33,22 +33,22 @@ require realpath(GEMS_ROOT_DIR . '/var/settings/db.inc.php');
 defined('DBPORT') || define('DBPORT', 3306);
 
 /**
- * Define application environment
+ * Define application environment for Erasmus MC
  */
-if (! defined('APPLICATION_ENV')) {
-    $env = getenv('APPLICATION_ENV');
-
-    if (! $env) {
-        // Erasmus MC processing
-        if (isset($_SERVER["HTTP_HOST"]) && (strpos($_SERVER["HTTP_HOST"], 'survey') === false)) {
-            $env = 'testing';
-        } else {
-            $env = 'production';
-        }
-    }
-
-    define('APPLICATION_ENV', $env);
-}
+//if (! defined('APPLICATION_ENV')) {
+//    $env = getenv('APPLICATION_ENV');
+//
+//    if (! $env) {
+//        // Erasmus MC processing
+//        if (isset($_SERVER["HTTP_HOST"]) && (strpos($_SERVER["HTTP_HOST"], 'survey') === false)) {
+//            $env = 'testing';
+//        } else {
+//            $env = 'production';
+//        }
+//    }
+//
+//    define('APPLICATION_ENV', $env);
+//}
 
 // Default values, required in index.php
 defined('GEMS_TIMEZONE') || define('GEMS_TIMEZONE', 'Europe/Amsterdam');
@@ -63,8 +63,8 @@ date_default_timezone_set(GEMS_TIMEZONE);
 /**
  * Optional settings
  */
-// set_include_path('.');
-// ini_set('error_log', GEMS_ROOT_DIR . '/var/logs/php_errors.log');
+set_include_path('.');
+ini_set('error_log', GEMS_ROOT_DIR . '/var/logs/php_errors.log');
 
 /**
  * Start standard GEMS bootstrap.
