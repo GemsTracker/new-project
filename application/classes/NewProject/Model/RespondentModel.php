@@ -7,7 +7,7 @@
  *
  * @package    NewProject
  * @subpackage Model
- * @copyright  Copyright (c) 2016 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    No free license, do not copy
  */
 
@@ -17,7 +17,7 @@ namespace NewProject\Model;
  *
  * @package    NewProject
  * @subpackage Model
- * @copyright  Copyright (c) 2016 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    No free license, do not copy
  */
 class RespondentModel extends \Gems_Model_RespondentNlModel

@@ -7,7 +7,7 @@
  *
  * @package    NewProject
  * @subpackage Menu
- * @copyright  Copyright (c) 2016 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    No free license, do not copy
  */
 
@@ -17,11 +17,14 @@ namespace NewProject;
  *
  * @package    NewProject
  * @subpackage Menu
- * @copyright  Copyright (c) 2016 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    No free license, do not copy
  */
-class Menu extends \Gems_Menu {
-
+class Menu extends \Gems_Menu 
+{
+    /**
+     * 
+     */
     public function loadProjectMenu()
     {
         /**

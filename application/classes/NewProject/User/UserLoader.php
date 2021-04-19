@@ -6,7 +6,7 @@
  * @package    NewProject
  * @subpackage User
  * @author     Matijs de Jong <mjong@magnafacta.nl>
- * @copyright  Copyright (c) 2015 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    Not licensed, do not copy
  */
 
@@ -17,7 +17,7 @@ namespace NewProject\User;
  *
  * @package    NewProject
  * @subpackage User
- * @copyright  Copyright (c) 2015 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    Not licensed, do not copy
  * @since      Class available since version 1.7.2 Mar 14, 2016 4:03:49 PM
  */

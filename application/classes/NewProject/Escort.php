@@ -9,7 +9,7 @@
  *
  * @package    NewProject
  * @subpackage Escort
- * @copyright  Copyright (c) 2016 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    No free license, do not copy
  */
 
@@ -19,7 +19,7 @@ namespace NewProject;
  *
  * @package    NewProject
  * @subpackage Escort
- * @copyright  Copyright (c) 2016 Project
+ * @copyright  Copyright (c) 2021 Project
  * @license    No free license, do not copy
  */
 class Escort extends \GemsEscort implements
