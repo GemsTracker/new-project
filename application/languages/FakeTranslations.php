@@ -1,7 +1,12 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+
+/**
+ * This files contains fake translation calls.
+ *
+ * It is never called in the program, but it is used to enter
+ * strings that should be translated, but are not called by
+ * the _() function in the code.
  */
-$this->_('Captcha value is wrong');
-?>
+
+// Example
+// $this->_('Captcha value is wrong');
